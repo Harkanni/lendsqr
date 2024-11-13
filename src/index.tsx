@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './styles/main.scss';
 import App from './App';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import UserDetails from './pages/UserDetails';
+import UsersList from './pages/UsersList';
 
 
 
@@ -15,7 +18,10 @@ root.render(
    <React.StrictMode>
       <Router>
          <Routes>
-            <Route path="/" element={<App />}>
+            <Route path="/" element={<App />}> { /* The APP Component is the main LAYOUT i.e the Home Page of the App */}
+               <Route path="/" element={<Login />} />
+               <Route path="users" element={<UsersList />} />
+               <Route path="user/:id" element={<UserDetails />} />
             </Route>
          </Routes>
       </Router>
