@@ -1,0 +1,137 @@
+/* Sidebar.css */
+.sidebar {
+   width: 283px;
+   height: 100vh;
+   background-color: #f8f9fa;
+   padding: 20px;
+   position: fixed;
+   font-family: 'Work Sans';
+   overflow: scroll;
+   // opacity: 20%;
+ }
+ 
+ .sidebar__section {
+   margin-bottom: 20px;
+   opacity: 70%;
+ }
+ 
+ .sidebar__title {
+   font-size: 12px;
+   color: #6c757d;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+   padding-left: 10px;
+ }
+ 
+ .sidebar__item {
+   display: flex;
+   align-items: center;
+   padding: 10px;
+   font-size: 14px;
+   color: #495057;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+ }
+
+ .sidebar__icon {
+   margin-right: 1rem
+ }
+ 
+ .sidebar__item:hover {
+   background-color: #e9ecef;
+   border-radius: 4px;
+ }
+ 
+ .sidebar__item i {
+   margin-right: 10px;
+   font-size: 18px;
+ }
+ 
+ .sidebar__item.active {
+   background-color: #e0f7fa;
+ }
+ 
+ .icon-users::before {
+   content: '👥'; /* Placeholder for user icon */
+ }
+ 
+ .icon-organization::before {
+   content: '🏢'; /* Placeholder for organization icon */
+ }
+ 
+ .icon-dashboard::before {
+   content: '🏠'; /* Placeholder for dashboard icon */
+ }
+ 
+ .icon-guarantors::before {
+   content: '🤝'; /* Placeholder for guarantors icon */
+ }
+ 
+ .icon-loans::before {
+   content: '💼'; /* Placeholder for loans icon */
+ }
+ 
+ .icon-decision::before {
+   content: '⚙️'; /* Placeholder for decision models icon */
+ }
+ 
+ .icon-savings::before {
+   content: '💰'; /* Placeholder for savings icon */
+ }
+ 
+ .icon-loan-request::before {
+   content: '📝'; /* Placeholder for loan request icon */
+ }
+ 
+ .icon-whitelist::before {
+   content: '🔒'; /* Placeholder for whitelist icon */
+ }
+ 
+ .icon-karma::before {
+   content: '🔔'; /* Placeholder for karma icon */
+ }
+ 
+ .icon-loan-products::before {
+   content: '📦'; /* Placeholder for loan products icon */
+ }
+ 
+ .icon-savings-products::before {
+   content: '🏦'; /* Placeholder for savings products icon */
+ }
+ 
+ .icon-fees::before {
+   content: '💸'; /* Placeholder for fees and charges icon */
+ }
+ 
+ .icon-transactions::before {
+   content: '💳'; /* Placeholder for transactions icon */
+ }
+ 
+ .icon-services::before {
+   content: '🔧'; /* Placeholder for services icon */
+ }
+ 
+ .icon-service-account::before {
+   content: '📂'; /* Placeholder for service account icon */
+ }
+ 
+ .icon-settlements::before {
+   content: '📜'; /* Placeholder for settlements icon */
+ }
+ 
+ .icon-reports::before {
+   content: '📊'; /* Placeholder for reports icon */
+ }
+ 
+ .icon-preferences::before {
+   content: '⚙️'; /* Placeholder for preferences icon */
+ }
+ 
+ .icon-fees-pricing::before {
+   content: '💵'; /* Placeholder for fees and pricing icon */
+ }
+ 
+ .icon-audit-logs::before {
+   content: '📝'; /* Placeholder for audit logs icon */
+ }
+ 
