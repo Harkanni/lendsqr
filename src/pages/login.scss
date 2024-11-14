@@ -1,0 +1,29 @@
+
+
+.forgotPassword {
+  background: #39cdcc;
+  background-clip: border-box;
+  color: transparent;
+  background-clip: text;
+  font-size: 12px;
+  line-height: 16.39px;
+  letter-spacing: 10%;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px){
+   .loginPage {
+      display: flex;
+      flex-direction: row !important;
+      justify-content: center;
+      gap: 1.5rem;
+
+      .page {
+         padding: 4rem;
+      }
+
+      .page:nth-child(2) {
+         padding-top: 8rem;
+      }
+   }
+}

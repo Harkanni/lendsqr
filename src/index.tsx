@@ -18,8 +18,8 @@ root.render(
    <React.StrictMode>
       <Router>
          <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/" element={<App />}> { /* The APP Component is the main LAYOUT i.e the Home Page of the App */}
-               <Route path="/" element={<Login />} />
                <Route path="users" element={<UsersList />} />
                <Route path="user/:id" element={<UserDetails />} />
             </Route>
