@@ -1,4 +1,6 @@
-
+.loginPage {
+   padding: 3rem;
+}
 
 .forgotPassword {
   background: #39cdcc;
@@ -13,6 +15,7 @@
 
 @media screen and (min-width: 768px){
    .loginPage {
+      padding: 0;
       display: flex;
       flex-direction: row !important;
       justify-content: center;
@@ -20,6 +23,10 @@
 
       .page {
          padding: 4rem;
+      }
+
+      .page:nth-child(1) {
+         background-color: #fbfbfb;
       }
 
       .page:nth-child(2) {

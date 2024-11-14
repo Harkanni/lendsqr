@@ -25,7 +25,7 @@ const Login = () => {
 
    return (
       <div className='loginPage' style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
-         <div className='page' style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', backgroundColor: '#fbfbfb' }}>
+         <div className='page' style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', }}>
             <img src={lendsqrLogo} alt="logo" width={100} style={{ marginBottom: '5rem'}} />
             <img src={signIn} alt="" width={'100%'} height={350} />
          </div>

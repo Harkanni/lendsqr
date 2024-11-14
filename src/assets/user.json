@@ -1,0 +1,12 @@
+{
+   "users": [
+      {
+         "Organisation": "Lendsqr",
+         "Username": "Adedeji", 
+         "Email": "adedeji@lendsqr.com",
+         "PhoneNumber": "08078903721",
+         "DateJOined": "May 15, 2020 10:00 AM",
+         "Status": "Inactive"
+      }
+   ]
+}
