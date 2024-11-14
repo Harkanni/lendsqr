@@ -75,7 +75,7 @@ const Login = () => {
                </>
                <div style={{ marginTop: '2rem' }}>
                   <p className='forgotPassword'>FORGOT PASSWORD</p>
-                  <button style={{ color: 'white', marginTop: '2rem', width: '100%', padding: '0.75rem', backgroundColor: '#39cdcc', border: '2px solid #545F7D26', borderRadius: '0.5rem' }}>LOG IN</button>
+                  <button style={{ color: 'white', marginTop: '2rem', width: '100%', padding: '0.75rem', backgroundColor: '#39cdcc', border: '2px solid #545F7D26', borderRadius: '0.5rem', cursor: 'pointer' }}>LOG IN</button>
                </div>
             </form>
          </div>
