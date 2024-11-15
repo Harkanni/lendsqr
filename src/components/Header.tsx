@@ -1,10 +1,10 @@
 import React from 'react'
 import { lendsqrLogo, searchIcon, notificationIcon, user1, dropdownIcon } from '../assets'
 
-const Header = () => {
+const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
    return (
-      <div style={{ position: 'fixed'}}>
-         <header style={{height: 'fit-content', background: 'white', color: '#213F7D', zIndex: '999px', position: 'fixed', inset: 0, }}>
+      <div style={{ position: 'fixed' }}>
+         <header style={{ height: 'fit-content', background: 'white', color: '#213F7D', zIndex: '999px', position: 'fixed', inset: 0, }}>
             <nav style={{ display: 'flex', padding: '1rem 2rem', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
                <div style={{ display: 'flex', width: '60%', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div className='logo'>
@@ -26,7 +26,7 @@ const Header = () => {
                         <img src={user1} alt="" style={{ borderRadius: '100px' }} />
                      </div>
                      <p>Adedeji</p>
-                     <img src={dropdownIcon} alt="" style={{ borderRadius: '' }} />
+                     <img src={dropdownIcon} alt="" style={{ cursor: 'pointer' }} onClick={toggleSidebar}/>
                   </div>
                </div>
             </nav>

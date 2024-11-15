@@ -3,9 +3,9 @@ import React from 'react';
 import './Sidebar.scss'; // Importing the CSS file for styling
 import { badgeIcon, bankIcon, briefcaseIcon, chartbarIcon, clipboardIcon, coinsIcon, dropdownIcon2, galaxyIcon, handshakeIcon, handshakeIcon2, homeIcon, loansIcon, orgIcon, piggybankIcon, scrollIcon, slidersIcon, usersIcon, usersIcon2, usersIcon3, usersIcon4, usersIcon5 } from '../assets';
 
-const Sidebar = () => {
+const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
    return (
-      <aside className="sidebar">
+      <aside className={`sidebar ${isVisible ? 'visible' : ''}`}>
          <div className="sidebar__section">
             <div className="sidebar__item" style={{ background: '' }}>
                <img src={briefcaseIcon} alt="" className='sidebar__icon' style={{ marginRight: '1rem' }} />
@@ -99,15 +99,15 @@ const Sidebar = () => {
          <div className="sidebar__section">
             <p className="sidebar__title">SETTINGS</p>
             <div className="sidebar__item">
-            <img src={slidersIcon} alt="user icon" className='sidebar__icon' />
+               <img src={slidersIcon} alt="user icon" className='sidebar__icon' />
                Preferences
             </div>
             <div className="sidebar__item">
-            <img src={badgeIcon} alt="user icon" className='sidebar__icon' />
+               <img src={badgeIcon} alt="user icon" className='sidebar__icon' />
                Fees and Pricing
             </div>
             <div className="sidebar__item">
-            <img src={clipboardIcon} alt="user icon" className='sidebar__icon' />
+               <img src={clipboardIcon} alt="user icon" className='sidebar__icon' />
                Audit Logs
             </div>
          </div>

@@ -1,21 +1,16 @@
-// UserDetails.js
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React from 'react';
+import UserSummary from '../components/UserSummary';
+import UserDetails from '../components/UserSummaryDetails';
 
-const UserDetails = () => {
-  const { id } = useParams(); // Get the user ID from the URL
-  const [user, setUser] = useState<any>(null); // State to hold user details
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState<null | string>(null); // Error state
+import './userDetails.scss';
 
-
+const UserPage = () => {
   return (
     <div>
-      
-        <p>No user found with ID {id}</p>
-      
+      <UserSummary />
+      <UserDetails />
     </div>
   );
 };
 
-export default UserDetails;
+export default UserPage;

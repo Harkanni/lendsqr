@@ -1,0 +1,125 @@
+.user-summary {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Work Sans';
+  color: #213f7d;
+  opacity: 90%;
+
+  .user-summary-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+
+    .divider {
+      width: 2px;
+      background-color: #000;
+      opacity: 5%;
+      height: 70px; // Adjust the height as needed
+    }
+
+    .user-summary-header-item:nth-child(1) {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .user-summary-header-item:nth-child(2) {
+      display: none !important;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .user-avatar {
+      flex: 0 1 50px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+
+    .user-details,
+    .user-tier,
+    .user-balance {
+      margin: 10px 0;
+    }
+
+    .user-balance h3 {
+      color: green;
+    }
+  }
+
+  .user-nav {
+    margin-top: 20px;
+
+    nav {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+
+      a {
+        color: #333;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        padding: 10px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          border-bottom: 2px solid #2b7a78;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .user-summary-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .divider {
+    height: 5px !important;
+    width: 100% !important;
+    border-radius: 5rem;
+  }
+}
+
+.user-details-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Work Sans';
+  opacity: 60%;
+
+  section {
+    margin-bottom: 20px;
+
+    h3 {
+      color: #2b7a78;
+      margin-bottom: 10px;
+    }
+
+    .info-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      p {
+        flex: 1 1 300px;
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .info-group {
+    flex-direction: column;
+  }
+}

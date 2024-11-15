@@ -44,26 +44,40 @@ html {
 /* App.css */
 .layout {
   display: flex; /* Flex container for sidebar and main content */
-  height: 200vh; /* Full viewport height */
-}
-
-.sidebar {
-  width: 250px; /* Fixed width for the sidebar */
-  background-color: #f8f9fa; /* Sidebar background color */
-  position: fixed; /* Stays fixed while scrolling */
-  // height: 100vh; /* Full viewport height for the sidebar */
+  min-height: 100vh; /* Full viewport height */
+  flex-direction: column;
 }
 
 .main__content {
   flex-grow: 1; /* The content will expand to fill the remaining space */
-  margin-left: 283px; /* Same width as sidebar to prevent overlap */
+  margin-left: 0px; /* Same width as sidebar to prevent overlap */
   margin-top: 5rem;
   padding: 20px;
   background-color: #f8f9fa; /* Main content background */
   overflow-y: auto; /* Enable scrolling if the content overflows */
+  transition: margin-left 0.3s ease-in-out;
 }
 
 @media screen and (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0) !important; /* Sidebar visible on large screens */
+    position: static; /* Sidebar remains static */
+  }
+
+  /* Layout for larger screens: Sidebar next to content */
+  .layout {
+    flex-direction: row; /* Sidebar and content side by side */
+  }
+
+  /* Main content adjusts to the sidebar width */
+  .main__content {
+    margin-left: 283px;
+  }
+
+  /* Hide the toggle button on larger screens */
+  .toggle-button {
+    display: none;
+  }
   .hidden {
     display: inline-flex;
   }
