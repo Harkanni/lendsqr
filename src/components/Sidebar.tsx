@@ -1,7 +1,7 @@
 // Sidebar.js
 import React from 'react';
 import './Sidebar.scss'; // Importing the CSS file for styling
-import { briefcaseIcon, dropdownIcon2, homeIcon, usersIcon } from '../assets';
+import { badgeIcon, bankIcon, briefcaseIcon, chartbarIcon, clipboardIcon, coinsIcon, dropdownIcon2, galaxyIcon, handshakeIcon, handshakeIcon2, homeIcon, loansIcon, orgIcon, piggybankIcon, scrollIcon, slidersIcon, usersIcon, usersIcon2, usersIcon3, usersIcon4, usersIcon5 } from '../assets';
 
 const Sidebar = () => {
    return (
@@ -23,35 +23,35 @@ const Sidebar = () => {
          <div className="sidebar__section">
             <p className="sidebar__title">CUSTOMERS</p>
             <div className="sidebar__item">
-               <img src={usersIcon} alt="user icon" className='sidebar__icon' />
+               <img src={usersIcon2} alt="user icon" className='sidebar__icon' />
                <a href="/users">Users</a>
             </div>
             <div className="sidebar__item">
-               <i className="icon-guarantors" />
+               <img src={usersIcon} alt="user icon" className='sidebar__icon' />
                Guarantors
             </div>
             <div className="sidebar__item">
-               <i className="icon-loans" />
+               <img src={loansIcon} alt="user icon" className='sidebar__icon' />
                Loans
             </div>
             <div className="sidebar__item">
-               <i className="icon-decision" />
+               <img src={handshakeIcon} alt="user icon" className='sidebar__icon' />
                Decision Models
             </div>
             <div className="sidebar__item">
-               <i className="icon-savings" />
+               <img src={piggybankIcon} alt="user icon" className='sidebar__icon' />
                Savings
             </div>
             <div className="sidebar__item">
-               <i className="icon-loan-request" />
+               <img src={handshakeIcon2} alt="user icon" className='sidebar__icon' />
                Loan Requests
             </div>
             <div className="sidebar__item">
-               <i className="icon-whitelist" />
+               <img src={usersIcon3} alt="user icon" className='sidebar__icon' />
                Whitelist
             </div>
             <div className="sidebar__item">
-               <i className="icon-karma" />
+               <img src={usersIcon4} alt="user icon" className='sidebar__icon' />
                Karma
             </div>
          </div>
@@ -59,39 +59,39 @@ const Sidebar = () => {
          <div className="sidebar__section">
             <p className="sidebar__title">BUSINESSES</p>
             <div className="sidebar__item">
-               <i className="icon-organization" />
+               <img src={briefcaseIcon} alt="brief case icon" className='sidebar__icon' />
                Organization
             </div>
             <div className="sidebar__item">
-               <i className="icon-loan-products" />
+               <img src={handshakeIcon2} alt="user icon" className='sidebar__icon' />
                Loan Products
             </div>
             <div className="sidebar__item">
-               <i className="icon-savings-products" />
+               <img src={bankIcon} alt="user icon" className='sidebar__icon' />
                Savings Products
             </div>
             <div className="sidebar__item">
-               <i className="icon-fees" />
+               <img src={coinsIcon} alt="user icon" className='sidebar__icon' />
                Fees and Charges
             </div>
             <div className="sidebar__item">
-               <i className="icon-transactions" />
+               <img src={orgIcon} alt="user icon" className='sidebar__icon' />
                Transactions
             </div>
             <div className="sidebar__item">
-               <i className="icon-services" />
+               <img src={galaxyIcon} alt="user icon" className='sidebar__icon' />
                Services
             </div>
             <div className="sidebar__item">
-               <i className="icon-service-account" />
+               <img src={usersIcon5} alt="user icon" className='sidebar__icon' />
                Service Account
             </div>
             <div className="sidebar__item">
-               <i className="icon-settlements" />
+               <img src={scrollIcon} alt="user icon" className='sidebar__icon' />
                Settlements
             </div>
             <div className="sidebar__item">
-               <i className="icon-reports" />
+               <img src={chartbarIcon} alt="user icon" className='sidebar__icon' />
                Reports
             </div>
          </div>
@@ -99,15 +99,15 @@ const Sidebar = () => {
          <div className="sidebar__section">
             <p className="sidebar__title">SETTINGS</p>
             <div className="sidebar__item">
-               <i className="icon-preferences" />
+            <img src={slidersIcon} alt="user icon" className='sidebar__icon' />
                Preferences
             </div>
             <div className="sidebar__item">
-               <i className="icon-fees-pricing" />
+            <img src={badgeIcon} alt="user icon" className='sidebar__icon' />
                Fees and Pricing
             </div>
             <div className="sidebar__item">
-               <i className="icon-audit-logs" />
+            <img src={clipboardIcon} alt="user icon" className='sidebar__icon' />
                Audit Logs
             </div>
          </div>

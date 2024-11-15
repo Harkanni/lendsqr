@@ -2,12 +2,12 @@
 .sidebar {
    width: 283px;
    height: 100vh;
-   background-color: #f8f9fa;
+   background-color: #fff;
    padding: 20px;
    position: fixed;
+   top: 5.75rem;
    font-family: 'Work Sans';
-   overflow: scroll;
-   // opacity: 20%;
+   overflow-y: auto !important;
  }
  
  .sidebar__section {
@@ -27,6 +27,7 @@
    display: flex;
    align-items: center;
    padding: 10px;
+   margin-bottom: 10px;
    font-size: 14px;
    color: #495057;
    cursor: pointer;

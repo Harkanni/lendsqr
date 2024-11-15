@@ -3,8 +3,8 @@ import { lendsqrLogo, searchIcon, notificationIcon, user1, dropdownIcon } from '
 
 const Header = () => {
    return (
-      <>
-         <header style={{ color: '#213F7D', zIndex: '999px' }}>
+      <div style={{ position: 'fixed'}}>
+         <header style={{height: 'fit-content', background: 'white', color: '#213F7D', zIndex: '999px', position: 'fixed', inset: 0, }}>
             <nav style={{ display: 'flex', padding: '1rem 2rem', justifyContent: 'space-between', alignItems: 'center', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
                <div style={{ display: 'flex', width: '60%', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div className='logo'>
@@ -31,7 +31,7 @@ const Header = () => {
                </div>
             </nav>
          </header>
-      </>
+      </div>
    )
 }
 

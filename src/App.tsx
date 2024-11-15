@@ -6,24 +6,17 @@ import Sidebar from './components/Sidebar';
 
 function App() {
    return (
-      <main>
-         <Header />
+      <>
+         <main className='layout'>
+            <Header />
 
-         <aside className="sidebar">
-            <nav>
-               <ul>
-                  <li><a href="/users">Users List</a></li>
-                  <li><a href="/user/123">User details</a></li>
-               </ul>
-            </nav>
-         </aside>
+            <Sidebar />
 
-         <Sidebar />
-
-         <section className='bodyContent'>
-            <Outlet />
-         </section>
-      </main>
+            <section className='main__content'>
+               <Outlet />
+            </section>
+         </main>
+      </>
    );
 }
 

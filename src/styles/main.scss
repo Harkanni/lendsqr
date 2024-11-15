@@ -1,21 +1,70 @@
 * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-   margin: 0;
-   font-family: 'Avenir Next';
-   -webkit-font-smoothing: antialiased;
-   -moz-osx-font-smoothing: grayscale;
- }
- 
- .hidden {
-   display: none !important;
- }
- 
+  margin: 0;
+  font-family: 'Avenir Next';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
- @media screen and (min-width: 768px) {
+// For WebKit browsers (Chrome, Safari, Edge)
+::-webkit-scrollbar {
+  width: 8px; // Adjust the width as needed
+  height: 8px; // For horizontal scrollbar
+}
 
- }
+::-webkit-scrollbar-thumb {
+  background-color: #888; // Thumb color
+  border-radius: 10px; // Optional: rounded corners
+  border: 2px solid #f1f1f1; // Optional: adds a border around the thumb
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; // Track color
+}
+
+// For Firefox
+html {
+  scrollbar-width: thin; // 'thin' or 'auto'
+  scrollbar-color: #888 #f1f1f1; // Thumb color and track color
+
+  .sidebar {
+    scrollbar-width: thin !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* App.css */
+.layout {
+  display: flex; /* Flex container for sidebar and main content */
+  height: 200vh; /* Full viewport height */
+}
+
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #f8f9fa; /* Sidebar background color */
+  position: fixed; /* Stays fixed while scrolling */
+  // height: 100vh; /* Full viewport height for the sidebar */
+}
+
+.main__content {
+  flex-grow: 1; /* The content will expand to fill the remaining space */
+  margin-left: 283px; /* Same width as sidebar to prevent overlap */
+  margin-top: 5rem;
+  padding: 20px;
+  background-color: #f8f9fa; /* Main content background */
+  overflow-y: auto; /* Enable scrolling if the content overflows */
+}
+
+@media screen and (min-width: 768px) {
+  .hidden {
+    display: inline-flex;
+  }
+}
