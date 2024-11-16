@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { dropdownIcon, lendsqrLogo, notificationIcon, searchIcon, user1 } from './assets';
 import Header from './components/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 
 function App() {
+   const navigate = useNavigate();
+
+   useEffect(() => {
+      const user = localStorage.getItem('lendqr_user'); // Assume 'user' key holds login info
+      if (!user) {
+         navigate('/login'); // Redirect to login if not logged in
+      }
+   }, [navigate]);
 
    const [sidebarVisible, setSidebarVisible] = useState<boolean>(false);
 

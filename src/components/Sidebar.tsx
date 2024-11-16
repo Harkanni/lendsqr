@@ -1,9 +1,18 @@
 // Sidebar.js
 import React from 'react';
 import './Sidebar.scss'; // Importing the CSS file for styling
-import { badgeIcon, bankIcon, briefcaseIcon, chartbarIcon, clipboardIcon, coinsIcon, dropdownIcon2, galaxyIcon, handshakeIcon, handshakeIcon2, homeIcon, loansIcon, orgIcon, piggybankIcon, scrollIcon, slidersIcon, usersIcon, usersIcon2, usersIcon3, usersIcon4, usersIcon5 } from '../assets';
+import { badgeIcon, bankIcon, briefcaseIcon, chartbarIcon, clipboardIcon, coinsIcon, dropdownIcon2, galaxyIcon, handshakeIcon, handshakeIcon2, homeIcon, loansIcon, logoutIcon, orgIcon, piggybankIcon, scrollIcon, slidersIcon, usersIcon, usersIcon2, usersIcon3, usersIcon4, usersIcon5 } from '../assets';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
+
+   const navigate = useNavigate();
+
+   const handleLogout = () => {
+      localStorage.removeItem('lendqr_user');
+      navigate('/login');
+   };
+   
    return (
       <aside className={`sidebar ${isVisible ? 'visible' : ''}`}>
          <div className="sidebar__section">
@@ -110,6 +119,15 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
                <img src={clipboardIcon} alt="user icon" className='sidebar__icon' />
                Audit Logs
             </div>
+         </div>
+
+         <hr style={{ position: 'absolute', height: '1px', width: '100%', left: '0', opacity: '20%' }} />
+      
+         <div className="sidebar__section" style={{ marginTop: '2rem'}} onClick={handleLogout}>
+            <div className="sidebar__item">
+               <img src={logoutIcon} alt="user icon" className='sidebar__icon' />
+               Logout
+            </div>            
          </div>
       </aside>
    );

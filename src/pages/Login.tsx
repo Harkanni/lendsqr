@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { lendsqrLogo, signIn } from '../assets/'
 import './login.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
    const [email, setEmail] = useState('');
@@ -20,6 +21,15 @@ const Login = () => {
    // Toggle the visibility of the password
    const toggleShowPassword = () => {
       setShowPassword(!showPassword);
+   };
+
+   const navigate = useNavigate();
+
+   const handleLogin = () => {
+      // Simulating login
+      const user = { email: email, password: password };
+      localStorage.setItem('lendqr_user', JSON.stringify(user)); // Save user info in localStorage
+      navigate('/users'); // Redirect to the users list page
    };
 
 
@@ -75,7 +85,7 @@ const Login = () => {
                </>
                <div style={{ marginTop: '2rem' }}>
                   <p className='forgotPassword'>FORGOT PASSWORD</p>
-                  <button style={{ color: 'white', marginTop: '2rem', width: '100%', padding: '0.75rem', backgroundColor: '#39cdcc', border: '2px solid #545F7D26', borderRadius: '0.5rem', cursor: 'pointer' }}>LOG IN</button>
+                  <button onClick={handleLogin} style={{ color: 'white', marginTop: '2rem', width: '100%', padding: '0.75rem', backgroundColor: '#39cdcc', border: '2px solid #545F7D26', borderRadius: '0.5rem', cursor: 'pointer' }}>LOG IN</button>
                </div>
             </form>
          </div>
