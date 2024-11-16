@@ -1,59 +1,137 @@
 import React from 'react';
 
 const UserDetails = () => {
-  return (
-    <div className="user-details-section">
-      <section className="personal-info">
-        <h3>Personal Information</h3>
-        <div className="info-group">
-          <p><strong>Full Name:</strong> Grace Effiom</p>
-          <p><strong>Phone Number:</strong> 07060780922</p>
-          <p><strong>Email Address:</strong> grace@gmail.com</p>
-          <p><strong>BVN:</strong> 07060780922</p>
-          <p><strong>Gender:</strong> Female</p>
-        </div>
-        <div className="info-group">
-          <p><strong>Marital Status:</strong> Single</p>
-          <p><strong>Children:</strong> None</p>
-          <p><strong>Type of Residence:</strong> Parent's Apartment</p>
-        </div>
-      </section>
+   return (
+      <div className="user-details-section" style={{}}>
+         <section className="personal-info">
+            <h3 style={{ fontWeight: '500', fontSize: '16px' }}>Personal Information</h3>
+            <div className="info-group">
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> Grace Effiom</p>
+                  <strong className='info-strong'>Full Name:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>07060780922</p>
+                  <strong className='info-strong'>Phone Number:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>grace@gmail.com</p>
+                  <strong className='info-strong'>Email Address:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>07060780922</p>
+                  <strong className='info-strong'>BVN:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> Female</p>
+                  <strong className='info-strong'>Gender:</strong>
+               </div>
+            </div>
+            <div className="info-group">
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> Grace Effiom</p>
+                  <strong className='info-strong'>Full Name:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>07060780922</p>
+                  <strong className='info-strong'>Phone Number:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>grace@gmail.com</p>
+                  <strong className='info-strong'>Email Address:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>07060780922</p>
+                  <strong className='info-strong'>BVN:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> Female</p>
+                  <strong className='info-strong'>Gender:</strong>
+               </div>
+            </div>
 
-      <section className="education-info">
-        <h3>Education and Employment</h3>
-        <div className="info-group">
-          <p><strong>Level of Education:</strong> B.Sc</p>
-          <p><strong>Employment Status:</strong> Employed</p>
-          <p><strong>Sector of Employment:</strong> FinTech</p>
-          <p><strong>Duration of Employment:</strong> 2 years</p>
-        </div>
-        <div className="info-group">
-          <p><strong>Office Email:</strong> grace@lendsqr.com</p>
-          <p><strong>Monthly Income:</strong> ₦200,000.00 - ₦400,000.00</p>
-          <p><strong>Loan Repayment:</strong> 40,000</p>
-        </div>
-      </section>
+            <hr className='divider' />
+         </section>
 
-      <section className="social-info">
-        <h3>Socials</h3>
-        <div className="info-group">
-          <p><strong>Twitter:</strong> @grace_effiom</p>
-          <p><strong>Facebook:</strong> Grace Effiom</p>
-          <p><strong>Instagram:</strong> @grace_effiom</p>
-        </div>
-      </section>
+         <section className="education-info">
+            <h3 style={{ fontWeight: '500', fontSize: '16px' }}>Education and Employment</h3>
+            <div className="info-group">
+               <div style={{  display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>B.Sc</p>
+                  <strong className='info-strong'>LEVEL OF EDUCATION</strong>
+               </div>
+               <div style={{  display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>Employed</p>
+                  <strong className='info-strong'>EMPLOYMENT STATUS</strong>
+               </div>
+               <div style={{  display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>Fintech</p>
+                  <strong className='info-strong'>SECTOR OF EMPLOYMENT</strong>
+               </div>
+               <div style={{  display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>2 years</p>
+                  <strong className='info-strong'>DURATION OF EMPLOYMENT</strong>
+               </div>
+               <div style={{  display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> grace@lendsqr.com </p>
+                  <strong className='info-strong'>OFFICE EMAIL</strong>
+               </div>
+               <div style={{  display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> ₦200,000.00- ₦400,000.00 </p>
+                  <strong className='info-strong'>Monthly Income</strong>
+               </div>
+               <div style={{  display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> 40,000 </p>
+                  <strong className='info-strong'>Loan Repayment</strong>
+               </div>
+            </div>
 
-      <section className="guarantor-info">
-        <h3>Guarantor</h3>
-        <div className="info-group">
-          <p><strong>Full Name:</strong> Debby Ogana</p>
-          <p><strong>Phone Number:</strong> 07060780922</p>
-          <p><strong>Email Address:</strong> debby@gmail.com</p>
-          <p><strong>Relationship:</strong> Sister</p>
-        </div>
-      </section>
-    </div>
-  );
+            <hr className='divider' />
+         </section>
+
+         <section className="social-info">
+            <h3 style={{ fontWeight: '500', fontSize: '16px' }}>Socials</h3>
+            <div className="info-group">
+               <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> @grace_effiom</p>
+                  <strong className='info-strong'>TWITTER</strong>
+               </div>
+               <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>Grace Effiom</p>
+                  <strong className='info-strong'>FACEBOOK</strong>
+               </div>
+               <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>@grace_effiom</p>
+                  <strong className='info-strong'>INSTAGRAM</strong>
+               </div>              
+            </div>
+
+            <hr className='divider' />
+         </section>
+
+         <section className="guarantor-info">
+            <h3 style={{ fontWeight: '500', fontSize: '16px' }}>Guarantor</h3>
+            <div className="info-group">
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'> Grace Effiom</p>
+                  <strong className='info-strong'>Full Name:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>07060780922</p>
+                  <strong className='info-strong'>Phone Number:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>grace@gmail.com</p>
+                  <strong className='info-strong'>Email Address:</strong>
+               </div>
+               <div style={{ flex: 1, display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
+                  <p className='info-p'>Sister</p>
+                  <strong className='info-strong'>Relationship</strong>
+               </div>              
+            </div>
+         </section>
+      </div>
+   );
 };
 
 export default UserDetails;

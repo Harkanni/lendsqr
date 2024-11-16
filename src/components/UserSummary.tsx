@@ -49,7 +49,7 @@ const UserSummary = () => {
             <hr className='divider' />
          </div>
          <div className="user-nav">
-            <nav>
+            <nav style={{ fontSize: ''}}>
                <a href="#">General Details</a>
                <a href="#">Documents</a>
                <a href="#">Bank Details</a>
