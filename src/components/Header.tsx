@@ -18,7 +18,8 @@ const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
                   </div>
                </div>
                <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-                  <a className='hidden' href="#">Docs</a>
+                  {/* // TODO */}
+                  <p className='hidden'>Docs</p> { /* link to docs  */}
                   <img src={notificationIcon} alt="notification" width={26} height={26} color='black' />
 
                   <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.5rem', fontFamily: 'Work Sans' }}>
