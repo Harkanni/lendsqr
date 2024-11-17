@@ -20,8 +20,8 @@ root.render(
          <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<App />}> { /* The APP Component is the main LAYOUT i.e the Home Page of the App */}
-               <Route path="users" element={<UsersList />} />
-               <Route path="user/:id" element={<UserDetails />} />
+               <Route path="/users" element={<UsersList />} />
+               <Route path="/user/:id" element={<UserDetails />} />
             </Route>
          </Routes>
       </Router>
