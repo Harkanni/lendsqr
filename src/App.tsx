@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { dropdownIcon, lendsqrLogo, notificationIcon, searchIcon, user1 } from './assets';
+// import { dropdownIcon, lendsqrLogo, notificationIcon, searchIcon, user1 } from './assets';
 import Header from './components/Header';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
