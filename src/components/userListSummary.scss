@@ -1,0 +1,87 @@
+@use '../styles/variables' as *;
+@use '../styles/_mixins.scss' as *;
+
+.user-title {
+  color: #213f7d;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28.15px;
+  font-family: 'Work Sans';
+  padding: 1rem 0rem;
+
+  @include respond-to('phone') {
+   //  padding: 1rem 0rem;
+  }
+}
+.user-summary {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(210px, 1fr)
+  ); // Adjust min width as needed
+  gap: 20px;
+  padding: 20px 20px;
+  background-color: #fff; // Adjust background color as needed
+  margin-bottom: 2rem;
+
+  @include respond-to('phone') {
+    padding: 2rem 2rem;
+  }
+
+  .summary-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    // background-color: #f8f8f8;
+    // border-radius: 10px;
+    padding: 20px;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    border-radius: 4px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    background: #fff;
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
+
+    @include respond-to('phone') {
+      align-items: center;
+    }
+    .icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+    }
+
+    .details {
+      //   text-align: center;
+
+      .title {
+        font-size: 12px;
+        color: $color-dark-blue;
+        margin-bottom: 5px;
+      }
+
+      .value {
+        font-size: 18px;
+        font-weight: bold;
+        color: $color-dark-blue;
+      }
+    }
+  }
+}
+
+@include respond-to('phone') {
+  .user-summary {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); // Adjust for smaller screens
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

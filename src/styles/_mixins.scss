@@ -1,0 +1,19 @@
+@mixin respond-to($media) {
+   @if $media == "desktop" {
+     @content;
+   } @else if $media == "tablet" {
+     @media (max-width: 1024px) {
+       @content;
+     }
+   } @else if $media == "phone" {
+     @media (max-width: 768px) {
+       @content;
+     }
+   }
+ }
+ 
+ // @include mx.respond-to('tablet') {
+ //     // Tablet styles
+ //     width: 95%;
+ //     padding: 15px;
+ //   }
