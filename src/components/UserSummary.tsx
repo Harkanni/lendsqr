@@ -1,9 +1,10 @@
 import React from 'react';
 import { ellipse, goldstarIcon, starIcon } from '../assets';
+import './userSummary.scss';
 
 const UserSummary = () => {
    return (
-      <div className="user-summary">
+      <div className="user-summary-page">
          <div className="user-summary-header">
 
             <div className='user-summary-header-item'>
