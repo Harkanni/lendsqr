@@ -30,6 +30,8 @@ import goldstarIcon from './np_star_1208084_000000 1.png'
 import starIcon from './np_star_1171151_000000 1.png'
 import logoutIcon from './sign-out 1.png'
 import backarrowIcon from './np_back_3007750_000000 1.png'
+import unionIcon from './Union.png'
+import filterIcon from './filter.png'
 
 
-export { signIn, lendsqrLogo, user1, searchIcon, notificationIcon, dropdownIcon, dropdownIcon2, briefcaseIcon, homeIcon, usersIcon, usersIcon2, loansIcon, handshakeIcon, piggybankIcon, handshakeIcon2, usersIcon3, usersIcon4, bankIcon, coinsIcon, orgIcon, galaxyIcon, usersIcon5, scrollIcon, chartbarIcon, slidersIcon, badgeIcon, clipboardIcon, ellipse, goldstarIcon, starIcon, logoutIcon, backarrowIcon }
+export { signIn, lendsqrLogo, user1, searchIcon, notificationIcon, dropdownIcon, dropdownIcon2, briefcaseIcon, homeIcon, usersIcon, usersIcon2, loansIcon, handshakeIcon, piggybankIcon, handshakeIcon2, usersIcon3, usersIcon4, bankIcon, coinsIcon, orgIcon, galaxyIcon, usersIcon5, scrollIcon, chartbarIcon, slidersIcon, badgeIcon, clipboardIcon, ellipse, goldstarIcon, starIcon, logoutIcon, backarrowIcon, unionIcon, filterIcon, }

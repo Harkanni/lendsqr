@@ -37,8 +37,16 @@ html {
   }
 }
 
+.searchBarContainer {
+   gap: 1rem !important;
+}
+
 .hidden {
   display: none !important;
+}
+
+.hidden-lg {
+   display: block !important;
 }
 
 /* App.css */
@@ -79,6 +87,10 @@ html {
     display: none;
   }
   .hidden {
-    display: inline-flex;
+    display: inline-flex !important;
+  }
+
+  .hidden-lg {
+    display: none !important;
   }
 }
