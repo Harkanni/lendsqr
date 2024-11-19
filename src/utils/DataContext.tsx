@@ -25,6 +25,7 @@ const API_USERS_URL = 'https://run.mocky.io/v3/e2610d51-3549-47c5-bc2f-41f4ffd25
 const API_DETAILS_URL = 'https://run.mocky.io/v3/c4087e71-851a-43e5-9dff-eaab28a6cddc';
 
 const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+
    const [users, setUsers] = useState<Users[]>([]);
    const [user, setUser] = useState<UserDetails | null>(null);
    const [userCredentials, setUserCredentials] = useState<UserCredentials>({ email: '', password: '' });
