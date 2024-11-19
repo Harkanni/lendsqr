@@ -6,9 +6,9 @@ import UserDetails from '../components/UserSummaryDetails';
 import './userDetails.scss';
 import { backarrowIcon } from '../assets';
 import { useNavigate } from 'react-router-dom';
+import { useUserContext } from '../utils/DataContext';
 
 
-import useUser from '../utils/UserContext';
 
 
 const UserPage = () => {
@@ -17,15 +17,14 @@ const UserPage = () => {
 
    const { id } = useParams<{ id: string }>(); // Get the dynamic `id` from the URL
 
-   const { fetchUserById, fetchUsers, error, loading, updateUserStatus, user, users } = useUser();
+   const { fetchUserById, error, loading, user, users } = useUserContext();
 
 
    useEffect(() => {
       if (id) {
          fetchUserById(id); // Make an API call or fetch from local storage
-         console.log(user);
       }
-   }, [id]); // Dependency array ensures the effect runs when `id` changes
+   }, [id, users]); // Dependency array ensures the effect runs when `id` changes
 
 
 

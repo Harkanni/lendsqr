@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { lendsqrLogo, signIn, loginIllustrationImg } from '../assets/'
 import './login.scss';
 import { useNavigate } from 'react-router-dom';
+import { useUserContext } from '../utils/DataContext';
 
 const Login = () => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [showPassword, setShowPassword] = useState(false);
+   const { login } = useUserContext();
 
    // Handler for email input
    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,11 +27,17 @@ const Login = () => {
 
    const navigate = useNavigate();
 
+   // const handleLogin = () => {
+   //    // Simulating login
+   //    const user = { email: email, password: password };
+   //    localStorage.setItem('lendqr_user', JSON.stringify(user)); // Save user info in localStorage
+   //    navigate('/users'); // Redirect to the users list page
+   // };
+
    const handleLogin = () => {
-      // Simulating login
-      const user = { email: email, password: password };
-      localStorage.setItem('lendqr_user', JSON.stringify(user)); // Save user info in localStorage
-      navigate('/users'); // Redirect to the users list page
+      const userDetails = { password: password, email: email }; // Replace with actual login logic
+      login(userDetails);
+      navigate('/'); // Redirect to the home page
    };
 
 

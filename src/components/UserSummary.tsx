@@ -1,13 +1,9 @@
 import React, { useEffect } from 'react';
 import { ellipse, goldstarIcon, starIcon } from '../assets';
 import './userSummary.scss';
-import useUser from '../utils/UserContext';
 import { UserDetails } from '../utils/types';
 
 const UserSummary = ({ userInfo }: { userInfo: UserDetails | null }) => {
-
-   const { fetchUserById, fetchUsers, error, loading, updateUserStatus, user, users } = useUser();
-
    return (
       <div className="user-summary-page">
          <div className="user-summary-header">

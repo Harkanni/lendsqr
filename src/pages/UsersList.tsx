@@ -11,8 +11,8 @@ import {
    flexRender,
 } from "@tanstack/react-table";
 import UserlistSummary from '../components/UserlistSummary'
-import useUser from "../utils/UserContext";
-import { UserDetails, Users } from "../utils/types";
+import { useUserContext } from '../utils/DataContext';
+import { Users } from "../utils/types";
 import ActionMenu from "../components/ActionMenu";
 import FilterModal from "../components/FilterModal";
 import sortIcon from "../assets/filter.png";
@@ -20,8 +20,8 @@ import arrowDown from "../assets/filter.png";
 import arrowUp from "../assets/filter.png";
 
 const UserList: React.FC = () => {
-   const { users, fetchUserById, fetchUsers } = useUser();
-   const navigate = useNavigate();
+   const { users, loading, error, updateUserStatus } = useUserContext();
+      const navigate = useNavigate();
    const [sorting, setSorting] = useState<SortingState>([]);
    const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
 
@@ -156,8 +156,9 @@ const UserList: React.FC = () => {
    });
 
    useEffect(() => {
-      fetchUsers();
-   }, [])
+      // fetchUsers();
+      console.log('User table here......................: ', users);
+   }, [users])
 
    if (!users) {
       return <p>Loading users...</p>;
@@ -168,7 +169,7 @@ const UserList: React.FC = () => {
          <UserlistSummary />
          <div className="table-container">
             <button onClick={toggleFilterModal} className="filter-button">
-               Filter By <img src={arrowDown} alt="" />
+               Filter <img src={arrowDown} alt="" />
             </button>
             <div className="user-list-table">
                {showFilterModal && <FilterModal toggleModal={toggleFilterModal} />}
@@ -191,7 +192,7 @@ const UserList: React.FC = () => {
                      {table.getRowModel().rows.map((row) => (
                         <tr
                            key={row.id}
-                           onClick={() => navigate(`/user/${row.original.id}`)} // Navigate to `/user/:id`
+                           // onClick={() => navigate(`/user/${row.original.id}`)} // Navigate to `/user/:id`
                            style={{
                               cursor: "pointer",
                            }}

@@ -1,37 +1,37 @@
 import React, { useEffect, useState } from 'react';
-// import { dropdownIcon, lendsqrLogo, notificationIcon, searchIcon, user1 } from './assets';
-import Header from './components/Header';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import { useUserContext } from './utils/DataContext';
 
 function App() {
-   const navigate = useNavigate();
+  const { isAuthenticated, login, logout } = useUserContext();
+  const navigate = useNavigate();
 
-   useEffect(() => {
-      const user = localStorage.getItem('lendqr_user'); // Assume 'user' key holds login info
-      if (!user) {
-         navigate('/login'); // Redirect to login if not logged in
-      }
-   }, [navigate]);
+  // Check user authentication on component mount
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/login'); // Redirect to login if user is not authenticated
+    }
+  }, [isAuthenticated, navigate]);
 
-   const [sidebarVisible, setSidebarVisible] = useState<boolean>(false);
+  const [sidebarVisible, setSidebarVisible] = useState<boolean>(false);
 
-   const toggleSidebar = () => {
-      console.log('Toggle sidebar toggled');
-      setSidebarVisible(!sidebarVisible);
-   };
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
 
-   return (
-      <main className='layout'>
-         <Header toggleSidebar={toggleSidebar} />
+  return (
+    <main className='layout'>
+      <Header toggleSidebar={toggleSidebar} />
 
-         <Sidebar isVisible={sidebarVisible} />
+      <Sidebar isVisible={sidebarVisible} />
 
-         <section className='main__content'>
-            <Outlet />
-         </section>
-      </main>
-   );
+      <section className='main__content'>
+        <Outlet />
+      </section>
+    </main>
+  );
 }
 
 export default App;
