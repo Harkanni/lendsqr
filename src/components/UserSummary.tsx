@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ellipse, goldstarIcon, starIcon } from '../assets';
 import './userSummary.scss';
+import useUser from '../utils/UserContext';
+import { UserDetails } from '../utils/types';
 
-const UserSummary = () => {
+const UserSummary = ({ userInfo }: { userInfo: UserDetails | null }) => {
+
+   const { fetchUserById, fetchUsers, error, loading, updateUserStatus, user, users } = useUser();
+
    return (
       <div className="user-summary-page">
          <div className="user-summary-header">
@@ -12,8 +17,8 @@ const UserSummary = () => {
                   <img src={ellipse} alt="User Avatar" width={100} height={100} style={{ borderRadius: '100px' }} />
                </div>
                <div className="user-details">
-                  <h2 style={{ fontSize: '22px', fontWeight: 500 }}>Grace Effiom</h2>
-                  <p style={{ fontSize: '14px', marginTop: '0.35rem' }}>LSQFf587g90</p>
+                  <h2 style={{ fontSize: '22px', fontWeight: 500 }}> {userInfo?.fullName} </h2>
+                  <p style={{ fontSize: '14px', marginTop: '0.35rem' }}> {userInfo?.id}</p>
                </div>
             </div>
 
@@ -43,14 +48,14 @@ const UserSummary = () => {
             <hr className='divider' />
 
             <div className="user-balance user-summary-header-item">
-               <h3 style={{ fontSize: '22px', fontWeight: 500 }}>₦200,000.00</h3>
-               <p style={{ marginTop: '0.35rem' }}>9912345678/Providus Bank</p>
+               <h3 style={{ fontSize: '22px', fontWeight: 500 }}> {userInfo?.employmentInfo.monthlyIncome}</h3>
+               <p style={{ marginTop: '0.35rem' }}>{userInfo?.bank.name}/{userInfo?.bank.accountNumber}</p>
             </div>
 
             <hr className='divider' />
          </div>
          <div className="user-nav">
-            <nav style={{ fontSize: ''}}>
+            <nav style={{ fontSize: '' }}>
                <a href="#">General Details</a>
                <a href="#">Documents</a>
                <a href="#">Bank Details</a>

@@ -14,7 +14,7 @@ interface UseUserReturn {
 }
 
 const useUser = (): UseUserReturn => {
-   console.log('running user hook')
+   // console.log('running user hook')
    const [users, setUsers] = useState<Users[] | any>(null);
    const [user, setUser] = useState<UserDetails | null >(null);
    const [loading, setLoading] = useState<boolean>(false);
@@ -37,7 +37,7 @@ const useUser = (): UseUserReturn => {
             setUsers(cachedUsers);
          } else {
             const response = await axios.get<Users[]>(API_USERS_URL);
-            console.log(response);
+            // console.log(response);
             setUsers(response.data);
             await storage.setItem('users', response.data);
          }

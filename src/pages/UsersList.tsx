@@ -197,7 +197,7 @@ const UserList: React.FC = () => {
                            }}
                         >
                            {row.getVisibleCells().map((cell) => {
-                              console.log(cell)
+                              // console.log(cell)
                               return (
 
                                  <td key={cell.id}>
@@ -211,20 +211,23 @@ const UserList: React.FC = () => {
                </table>
                {/* Pagination Controls */}
                <div className="pagination-controls">
-                  <div>
+                  <div className="page-amount-count">
                      Showing{" "}
-                     <select
-                        value={table.getState().pagination.pageSize}
-                        onChange={(e) => {
-                           table.setPageSize(Number(e.target.value));
-                        }}
-                     >
-                        {[10, 20, 30, 40, 50].map((pageSize) => (
-                           <option key={pageSize} value={pageSize}>
-                              {pageSize}
-                           </option>
-                        ))}
-                     </select>{" "}
+                     <div className="select-container">
+
+                        <select
+                           value={table.getState().pagination.pageSize}
+                           onChange={(e) => {
+                              table.setPageSize(Number(e.target.value));
+                           }}
+                        >
+                           {[10, 20, 30, 40, 50].map((pageSize) => (
+                              <option key={pageSize} value={pageSize}>
+                                 {pageSize}
+                              </option>
+                           ))}
+                        </select>{" "}
+                     </div>
                      out of {users.length}
                   </div>
                   <div>

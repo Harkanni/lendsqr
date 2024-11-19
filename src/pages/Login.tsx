@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { lendsqrLogo, signIn } from '../assets/'
+import { lendsqrLogo, signIn, loginIllustrationImg } from '../assets/'
 import './login.scss';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,8 +36,10 @@ const Login = () => {
    return (
       <div className='loginPage' style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
          <div className='page' style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'start', justifyContent: 'center', }}>
-            <img src={lendsqrLogo} alt="logo" width={100} style={{ marginBottom: '5rem'}} />
-            <img src={signIn} alt="" width={'100%'} height={350} />
+            <img src={lendsqrLogo} alt="logo" width={100} style={{ marginBottom: '5rem' }} />
+            <div className='login-img-container'>
+               <img className='login-img' src={loginIllustrationImg} alt="login image" width={'100%'} />
+            </div>
          </div>
          <div className='page' style={{ flex: 1, backgroundColor: '#fff' }}>
             <div style={{ marginBottom: "2rem" }}>

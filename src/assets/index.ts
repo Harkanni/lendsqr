@@ -1,4 +1,4 @@
-import signIn from './pablo-sign-in.png'
+import signIn from './pablo-sign-in 1.png'
 import lendsqrLogo from './logo.svg'
 import user1 from './user1.png'
 import searchIcon from './searchIcon.png'
@@ -36,8 +36,9 @@ import doubleUserIcon from './double-user.png'
 import trippleUserIcon from './tripple-user.png'
 import documentIcon from './document.png'
 import dbIcon from './db.png'
+import loginIllustrationImg from './loginIllustration.png'
 
 
 
 
-export { signIn, lendsqrLogo, user1, searchIcon, notificationIcon, dropdownIcon, dropdownIcon2, briefcaseIcon, homeIcon, usersIcon, usersIcon2, loansIcon, handshakeIcon, piggybankIcon, handshakeIcon2, usersIcon3, usersIcon4, bankIcon, coinsIcon, orgIcon, galaxyIcon, usersIcon5, scrollIcon, chartbarIcon, slidersIcon, badgeIcon, clipboardIcon, ellipse, goldstarIcon, starIcon, logoutIcon, backarrowIcon, unionIcon, filterIcon, doubleUserIcon, trippleUserIcon, documentIcon, dbIcon }
+export {loginIllustrationImg, signIn, lendsqrLogo, user1, searchIcon, notificationIcon, dropdownIcon, dropdownIcon2, briefcaseIcon, homeIcon, usersIcon, usersIcon2, loansIcon, handshakeIcon, piggybankIcon, handshakeIcon2, usersIcon3, usersIcon4, bankIcon, coinsIcon, orgIcon, galaxyIcon, usersIcon5, scrollIcon, chartbarIcon, slidersIcon, badgeIcon, clipboardIcon, ellipse, goldstarIcon, starIcon, logoutIcon, backarrowIcon, unionIcon, filterIcon, doubleUserIcon, trippleUserIcon, documentIcon, dbIcon }

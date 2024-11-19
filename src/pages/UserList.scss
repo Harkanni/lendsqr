@@ -120,6 +120,14 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  color: #545f7d;
+  font-size: 0.95rem;
+
+  .page-amount-count {
+   display: flex;
+   gap: 0.3rem;
+   align-items: center;
+  }
 
   button {
     padding: 0.5rem 1rem;
@@ -140,9 +148,19 @@
     }
   }
 
-  select {
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid $color-dark-blue;
+  .select-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+   //  background-color: red;
+    width: 55px;
+
+    select {
+      padding: 0.3rem;
+      border-radius: 5px;
+      border: 1px solid $color-dark-blue;
+      width: 100%;
+      font-size: 0.8rem;
+    }
   }
 }
