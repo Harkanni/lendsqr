@@ -1,10 +1,10 @@
-
-
-
 import React from 'react'
-import { useUserContext } from '../utils/DataContext';
+import { useUserContext } from '../../services/context/DataContext';
+import './Pagination.scss';
+import { Users } from '../../utils/types';
+import { Table } from '@tanstack/react-table';
 
-const Pagination = ({ table } : any) => {
+const Pagination = ({ table }: { table: Table<Users> }) => {
    const { users, loading, error, updateUserStatus } = useUserContext();
 
    function generatePaginationButtons(
@@ -27,9 +27,9 @@ const Pagination = ({ table } : any) => {
          const endPage = Math.min(totalPages - 1, currentPage + 1);
 
          // Add ellipsis if the range does not connect to the first page
-         if (startPage > 2) {
-            buttons.push("...");
-         }
+         // if (startPage > 2) {
+         //    buttons.push("...");
+         // }
 
          // Add pages in the range
          for (let i = startPage; i <= endPage; i++) {

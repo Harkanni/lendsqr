@@ -1,7 +1,7 @@
 // Sidebar.js
 import React from 'react';
 import './Sidebar.scss'; // Importing the CSS file for styling
-import { badgeIcon, bankIcon, briefcaseIcon, chartbarIcon, clipboardIcon, coinsIcon, dropdownIcon2, galaxyIcon, handshakeIcon, handshakeIcon2, homeIcon, loansIcon, logoutIcon, orgIcon, piggybankIcon, scrollIcon, slidersIcon, usersIcon, usersIcon2, usersIcon3, usersIcon4, usersIcon5 } from '../assets';
+import { badgeIcon, bankIcon, briefcaseIcon, chartbarIcon, clipboardIcon, coinsIcon, dropdownIcon2, galaxyIcon, handshakeIcon, handshakeIcon2, homeIcon, loansIcon, logoutIcon, orgIcon, piggybankIcon, scrollIcon, slidersIcon, usersIcon, usersIcon2, usersIcon3, usersIcon4, usersIcon5 } from '../../assets';
 import { useNavigate } from 'react-router-dom';
 
 const Sidebar = ({ isVisible }: { isVisible: boolean }) => {

@@ -10,16 +10,17 @@ import {
    SortingState,
    flexRender,
 } from "@tanstack/react-table";
-import UserlistSummary from '../components/UserlistSummary'
-import { useUserContext } from '../utils/DataContext';
-import { Users } from "../utils/types";
-import ActionMenu from "../components/ActionMenu";
-import FilterModal from "../components/FilterModal";
-import sortIcon from "../assets/icons/filter.png";
-import arrowDown from "../assets/icons/filter.png";
-import arrowUp from "../assets/icons/filter.png";
-import Loading from "../components/Loading";
-import Pagination from "../components/Pagination";
+import UserlistSummary from '../../../components/User/List/UserlistSummary'
+import { useUserContext } from '../../../services/context/DataContext';
+import { Users } from "../../../utils/types";
+import ActionMenu from "../../../components/ActionMenu/ActionMenu";
+import FilterModal from "../../../components/FilterModal";
+import sortIcon from "../../../assets/icons/filter.png";
+import arrowDown from "../../../assets/icons/filter.png";
+import arrowUp from "../../../assets/icons/filter.png";
+import Loading from "../../../components/Loading/Loading";
+import Pagination from "../../../components/Pagination/Pagination";
+import formatDate from "../../../utils/formatDate";
 
 const UserList: React.FC = () => {
    const { users, loading, error, updateUserStatus } = useUserContext();
@@ -40,19 +41,7 @@ const UserList: React.FC = () => {
          default:
             return { fontSize: "0.7rem", color: "rgba(233, 178, 0)", fontWeight: "500", backgroundColor: "rgba(233, 178, 0, 0.1)", padding: "0.5rem 1rem", borderRadius: "0.75rem" };
       }
-   };
-
-   const formatDate = (dateString: string): string => {
-      const date = new Date(dateString);
-      return new Intl.DateTimeFormat("en-US", {
-         month: "short",
-         day: "2-digit",
-         year: "numeric",
-         hour: "numeric",
-         minute: "2-digit",
-         hour12: true,
-      }).format(date);
-   };
+   };   
 
    const columns: ColumnDef<Users>[] = [
       // Column definitions here...
@@ -157,14 +146,6 @@ const UserList: React.FC = () => {
       initialState: { pagination: { pageSize: 10, pageIndex: 0 } },
    });
 
-   useEffect(() => {
-      // fetchUsers();
-      console.log('User table here......................: ', users);
-   }, [users])
-
-
-   
-
 
    if (loading) return <Loading type='bars' color='#57b2c1' />
 
@@ -205,7 +186,6 @@ const UserList: React.FC = () => {
                            }}
                         >
                            {row.getVisibleCells().map((cell) => {
-                              // console.log(cell)
                               return (
 
                                  <td key={cell.id}>
@@ -219,8 +199,8 @@ const UserList: React.FC = () => {
                </table>
             </div>
          </div>
-         
-         <Pagination table={table} users />
+
+         <Pagination table={table} />
       </>
    );
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import localforage from 'localforage';
-import { UserDetails, Users } from './types';
+import { UserDetails, Users } from '../../utils/types';
 
 interface UseUserReturn {
    users: Users[] | null;

@@ -1,5 +1,5 @@
-@use '../assets/styles/_variables.scss' as *;
-@use '../assets/styles/_mixins.scss' as *;
+@use '../../../assets/styles/_variables.scss' as *;
+@use '../../../assets/styles/_mixins.scss' as *;
 
 .filter-button {
   display: flex;
@@ -184,97 +184,4 @@
 //   }
 // }
 
-.pagination-controls {
-   display: flex;
-   justify-content: space-between;
-   padding: 1rem;
-   background-color: #fff;
- 
-   .prev,
-   .next {
-     border-radius: 4px;
-     background: rgba(33, 63, 125, 0.1);
-     width: 32px;
-     height: 32px;
-   }
-   select {
-     width: 80px;
-   //   height: 40px;
-     padding: 0.5rem;
-     border-radius: 5px;
-     border-radius: 4px;
-     background: rgba(33, 63, 125, 0.1);
- 
-     display: flex;
-     place-content: center;
-   }
- 
-   .right,
-   .left {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     gap: 0.5rem;
-   }
- 
-   button {
-     padding: 0.5rem 1rem;
-     margin-right: 0.5rem;
-     background-color: transparent;
-     border: none;
-     border-radius: 4px;
-     cursor: pointer;
-     width: 24px;
-     height: 24px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: row;
- 
-     &:disabled {
-       opacity: 0.5;
-       cursor: default;
-     }
- 
-     &.active {
-       background-color: $color-primary;
-       color: #fff;
-     }
-   }
- 
-   select {
-     padding: 0.5rem;
-     border-radius: 5px;
-     border: 1px solid $color-dark-blue;
-   }
 
-
-}
-@include respond-to('phone') {
-   .pagination-controls {
-      flex-direction: column;
-      overflow: hidden;
-      gap: 1rem
-   }
-
-   .right {
-      overflow: hidden;
-      gap: 0rem !important;
-   }
-
-   .next {
-      margin: 0;
-   }
-
-   .select-container {
-          display: flex;
-          gap: 5px;
-          align-items: center;
-          width: fit-content;
-
-          select {
-            height: fit-content;
-            width: 60px;
-          }
-   }
- }

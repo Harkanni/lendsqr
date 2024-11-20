@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import axios from 'axios';
 import localforage from 'localforage';
-import { UserCredentials, UserDetails, Users } from './types';
+import { UserCredentials, UserDetails, Users } from '../../utils/types';
 
 interface UserContextType {
    users: Users[] | null;

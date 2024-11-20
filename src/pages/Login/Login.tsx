@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { lendsqrLogo, signIn, loginIllustrationImg } from '../assets/'
+import { lendsqrLogo, signIn, loginIllustrationImg } from '../../assets'
 import './login.scss';
 import { useNavigate } from 'react-router-dom';
-import { useUserContext } from '../utils/DataContext';
+import { useUserContext } from '../../services/context/DataContext';
 
 const Login = () => {
    const [email, setEmail] = useState('');

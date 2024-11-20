@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { ellipse, goldstarIcon, starIcon } from '../assets';
+import { ellipse, goldstarIcon, starIcon } from '../../../assets';
 import './userSummary.scss';
-import { UserDetails } from '../utils/types';
+import { UserDetails } from '../../../utils/types';
 
 const UserSummary = ({ userInfo }: { userInfo: UserDetails | null }) => {
    return (

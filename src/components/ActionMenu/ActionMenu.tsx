@@ -1,10 +1,10 @@
 // src/components/ActionMenu.tsx
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../utils/DataContext";
+import { useUserContext } from "../../services/context/DataContext";
 
-import './actionMenu.scss';
-import { blackListIcon, usersIcon6, viewIcon } from "../assets";
+import './ActionMenu.scss';
+import { blackListIcon, usersIcon6, viewIcon } from "../../assets";
 
 
 interface ActionMenuProps {

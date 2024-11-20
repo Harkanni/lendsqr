@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import UserSummary from '../components/UserSummary';
-import UserDetails from '../components/UserSummaryDetails';
+import UserSummary from '../../../components/User/Summary/UserSummary';
+import UserDetails from '../../../components/User/Summary/UserSummaryDetails';
 
 import './userDetails.scss';
-import { backarrowIcon } from '../assets';
+import { backarrowIcon } from '../../../assets';
 import { useNavigate } from 'react-router-dom';
-import { useUserContext } from '../utils/DataContext';
-import Loading from '../components/Loading';
+import { useUserContext } from '../../../services/context/DataContext';
+import Loading from '../../../components/Loading/Loading';
 
 
 

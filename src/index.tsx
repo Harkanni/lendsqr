@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './assets/styles/main.scss';
 import App from './App';
-import Login from './pages/Login';
-import UserDetails from './pages/UserDetails';
-import UsersList from './pages/UsersList';
-import { UserProvider } from './utils/DataContext';
-import ProtectedRoute from './utils/ProtectedRoute'; // Import ProtectedRoute
-import RedirectRoute from './utils/RedirectRoute';
+import Login from './pages/Login/Login';
+import UserDetails from './pages/User/Details/UserDetails';
+import UsersList from './pages/User/List/UsersList';
+import { UserProvider } from './services/context/DataContext';
+import ProtectedRoute from './Features/auth/ProtectedRoute'; // Import ProtectedRoute
+import RedirectRoute from './Features/auth/RedirectRoute';
 
 const root = ReactDOM.createRoot(
    document.getElementById('root') as HTMLElement

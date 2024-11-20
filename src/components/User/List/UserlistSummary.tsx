@@ -1,7 +1,7 @@
 // src/components/UserSummary.tsx
 import React from "react";
 import "./userListSummary.scss";
-import { dbIcon, documentIcon, doubleUserIcon, trippleUserIcon } from "../assets";
+import { dbIcon, documentIcon, doubleUserIcon, trippleUserIcon } from "../../../assets";
 
 
 // Summary card data

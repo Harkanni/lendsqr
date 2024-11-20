@@ -1,22 +1,11 @@
 import React from 'react';
-import { UserDetails as UserProps } from '../utils/types';
+import { UserDetails as UserProps } from '../../../utils/types';
+import generateAmountRange from '../../../utils/generateAmountRange';
 
 const UserDetails = ({ userInfo }: { userInfo: UserProps | null }) => {
    console.log("user Info: ", userInfo);
 
-   function subtractAmount(amountStr: any = '₦100000', subtractValue: number) {
-      // Step 1: Remove the currency symbol and commas
-      let numericValue = parseFloat(amountStr.replace(/[₦,]/g, ''));
 
-      // Step 2: Subtract the given value
-      let updatedValue = numericValue - subtractValue;
-
-      // Step 3: Format the result back to currency string
-      let formattedValue = `₦${updatedValue.toLocaleString('en-NG', { minimumFractionDigits: 2 })}`;
-
-      // Step 4: Return the formatted string
-      return `${formattedValue} - ${amountStr}`;
-   }
 
    return (
       <div className="user-details-section" style={{}}>
@@ -93,7 +82,7 @@ const UserDetails = ({ userInfo }: { userInfo: UserProps | null }) => {
                   <strong className='info-strong'>OFFICE EMAIL</strong>
                </div>
                <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>
-                  <p className='info-p'> { subtractAmount(userInfo?.employmentInfo.monthlyIncome, 10000) } </p>
+                  <p className='info-p'> { generateAmountRange(userInfo?.employmentInfo.monthlyIncome, 10000) } </p>
                   <strong className='info-strong'>Monthly Income</strong>
                </div>
                <div style={{ display: 'flex', flexDirection: 'column-reverse', gap: '0.35rem' }}>

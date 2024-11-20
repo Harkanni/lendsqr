@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useUserContext } from './DataContext';
+import { useUserContext } from '../../services/context/DataContext';
 
 const RedirectRoute: React.FC = () => {
    const { isAuthenticated } = useUserContext();
