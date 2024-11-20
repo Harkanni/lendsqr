@@ -2,6 +2,7 @@ import React from 'react';
 import { UserDetails as UserProps } from '../utils/types';
 
 const UserDetails = ({ userInfo }: { userInfo: UserProps | null }) => {
+   console.log("user Info: ", userInfo);
 
    function subtractAmount(amountStr: any = '₦100000', subtractValue: number) {
       // Step 1: Remove the currency symbol and commas

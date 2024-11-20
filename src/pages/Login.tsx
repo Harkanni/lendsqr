@@ -35,8 +35,8 @@ const Login = () => {
    // };
 
    const handleLogin = () => {
-      const userDetails = { password: password, email: email }; // Replace with actual login logic
-      login(userDetails);
+      const userCredentials = { password: password, email: email }; // Replace with actual login logic
+      login(userCredentials);
       navigate('/users'); // Redirect to the home page
    };
 

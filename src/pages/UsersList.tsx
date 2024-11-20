@@ -21,7 +21,7 @@ import arrowUp from "../assets/filter.png";
 
 const UserList: React.FC = () => {
    const { users, loading, error, updateUserStatus } = useUserContext();
-      const navigate = useNavigate();
+   const navigate = useNavigate();
    const [sorting, setSorting] = useState<SortingState>([]);
    const [showFilterModal, setShowFilterModal] = useState<boolean>(false);
 
@@ -30,13 +30,13 @@ const UserList: React.FC = () => {
    const getStatusStyle = (status: string): React.CSSProperties => {
       switch (status) {
          case "Active":
-            return { color: "green", fontWeight: "bold" };
+            return { fontSize: "0.7rem", color: "rgba(57, 205, 98)", fontWeight: "500", backgroundColor: "rgba(57, 205, 98, 0.06)", padding: "0.6rem 1.35rem", borderRadius: "0.75rem" };
          case "Blacklisted":
-            return { color: "red", fontWeight: "bold" };
+            return { fontSize: "0.7rem", color: "rgba(228, 3, 59)", fontWeight: "500", backgroundColor: "rgba(228, 3, 59, 0.1)", padding: "0.5rem", borderRadius: "0.75rem" };
          case "Inactive":
-            return { color: "gray", fontStyle: "italic" };
+            return { fontSize: "0.7rem", color: "rgba(84, 95, 125)", fontWeight: "500", backgroundColor: "rgba(84, 95, 125, 0.06)", padding: "0.5rem 1rem", borderRadius: "0.75rem", fontStyle: 'italic' };
          default:
-            return {};
+            return { fontSize: "0.7rem", color: "rgba(233, 178, 0)", fontWeight: "500", backgroundColor: "rgba(233, 178, 0, 0.1)", padding: "0.5rem 1rem", borderRadius: "0.75rem" };
       }
    };
 

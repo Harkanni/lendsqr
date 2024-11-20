@@ -56,15 +56,16 @@
 
     th,
     td {
-      padding: 0.75rem 0.5rem;
-
+      // padding: 0.75rem 0.5rem;
       text-align: left;
       border-bottom: 1px solid #d9d9d9;
-
       // min-width: 180px;
       padding: 0.8rem 0.75rem !important;
-      white-space: nowrap;
       font-size: 0.8rem !important;
+      white-space: nowrap;
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+      max-width: 150px; 
 
       &:last-child {
         border-right: none;
@@ -72,6 +73,7 @@
         padding: 0.1rem !important;
         text-align: center;
         height: 39px;
+        overflow: visible;
       }
     }
 
@@ -125,9 +127,9 @@
   font-size: 0.95rem;
 
   .page-amount-count {
-   display: flex;
-   gap: 0.3rem;
-   align-items: center;
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
   }
 
   button {
@@ -153,7 +155,7 @@
     display: flex;
     gap: 5px;
     align-items: center;
-   //  background-color: red;
+    //  background-color: red;
     width: 55px;
 
     select {

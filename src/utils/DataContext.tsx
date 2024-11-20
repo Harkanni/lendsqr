@@ -13,7 +13,7 @@ interface UserContextType {
    fetchUsers: () => void;
    fetchUserById: (id: string) => void;
    updateUserStatus: (userId: string, newStatus: string) => void;
-   login: (userDetails: UserCredentials) => void;
+   login: (userCredentials: UserCredentials) => void;
    logout: () => void;
    setUser: (user: UserDetails) => void;
    setUsers: (users: Users[]) => void;
@@ -64,20 +64,25 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       setError(null);
 
       try {
-         const cachedDetails = await storage.getItem<UserDetails[]>('user-details');
-         const cachedUser = cachedDetails?.find((u) => u.id === id);
+         // const cachedDetails = await storage.getItem<UserDetails[]>('user-details');
+         // console.log(cachedDetails)
+         // const cachedUser = cachedDetails?.find((u) => u.id === id);
+         // console.log("this is cached users: ", cachedUser)
+         // // const cachedUser = null;
 
-         if (cachedUser) {
-            setUser(cachedUser);
-         } else {
-            const response = await axios.get<UserDetails[]>(API_DETAILS_URL);
-            const fetchedUser = response.data.find((u) => u.id === id);
-            if (!fetchedUser) throw new Error(`User with ID ${id} not found`);
+         // if (cachedUser) {
+         //    console.log("cached user found: ", cachedUser)
+         //    setUser(cachedUser);
+         // } else {
+         const response = await axios.get<UserDetails[]>(API_DETAILS_URL);
+         console.log('User details fetched..: ', response)
+         const fetchedUser = response.data.find((u) => u.id === id);
+         if (!fetchedUser) throw new Error(`User with ID ${id} not found`);
 
-            setUser(fetchedUser);
-            const updatedCache = cachedDetails ? [...cachedDetails, fetchedUser] : [fetchedUser];
-            await storage.setItem('user-details', updatedCache);
-         }
+         setUser(fetchedUser);
+         // const updatedCache = cachedDetails ? [...cachedDetails, fetchedUser] : [fetchedUser];
+         // await storage.setItem('user-details', updatedCache);
+         // }
       } catch (err) {
          setError(axios.isAxiosError(err) ? err.message : 'An unexpected error occurred');
       } finally {
@@ -102,10 +107,10 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
    };
 
    // User login
-   const login = (userCred: UserCredentials) => {
-      setUserCredentials(userCred);
+   const login = (userCredentials: UserCredentials) => {
+      setUserCredentials(userCredentials);
       setIsAuthenticated(true);
-      localStorage.setItem('lendqr_user', JSON.stringify(userCred)); // Store user info in localStorage
+      localStorage.setItem('lendqr_user', JSON.stringify(userCredentials)); // Store user info in localStorage
    };
 
    // User logout
@@ -116,12 +121,6 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
    };
 
    useEffect(() => {
-      const storedUser = localStorage.getItem('lendqr_user');
-      if (storedUser) {
-         setUser(JSON.parse(storedUser));
-         setIsAuthenticated(true);
-      }
-
       fetchUsers();
    }, []);
 
