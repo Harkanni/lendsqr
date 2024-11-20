@@ -1,46 +1,149 @@
-# Getting Started with Create React App
+# Lendsqr Frontend Test  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Harkanni/lendsqr-fe-test/ci.yml?style=flat-square)  
+![Contributors](https://img.shields.io/github/contributors/Harkanni/lendsqr-fe-test?style=flat-square)  
+![License](https://img.shields.io/github/license/Harkanni/lendsqr-fe-test?style=flat-square)  
 
-## Available Scripts
+This repository contains a frontend web application built for the Lendsqr technical test. The application is a user management dashboard with features such as authentication, user listing, pagination, and status indicators (e.g., active, blacklisted). It demonstrates clean code practices, UI responsiveness, and an organized project structure.  
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Core Functionality  
+- **User Management Dashboard**: Displays user data in a paginated table with sorting and filtering capabilities.  
+- **Authentication**: Login functionality with session persistence using `localStorage`.  
+- **Responsive Design**: Adaptable UI for both desktop and mobile screens.  
+- **Status Indicators**: Users categorized as active, blacklisted, etc., with visually distinct badges.  
+- **Pagination**: Intuitive pagination with ellipsis for large datasets.  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Screenshots  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Login Page  
+![Login Page Screenshot](./screenshots/login.png)  
 
-### `npm run build`
+### Dashboard  
+![Dashboard Screenshot](./screenshots/dashboard.png)  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project has been structured for maintainability and scalability:  
 
-### `npm run eject`
+```plaintext  
+src/  
+├── assets/             # Static assets (images, icons, styles)  
+│   ├── images/         # Image files  
+│   ├── icons/          # Icon assets  
+│   └── styles/         # SCSS or CSS files  
+├── components/         # Reusable UI components (Button, Pagination, Loader, etc.)  
+├── features/           # Feature-specific modules (auth, dashboard, users)  
+├── hooks/              # Custom React hooks  
+├── services/           # API service files for network requests  
+├── store/              # State management (e.g., Redux slices)  
+├── types/              # Application-wide TypeScript definitions  
+├── utils/              # Helper utilities and constants  
+└── App.tsx             # Main application entry point  
+```  
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation and Setup  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites  
+- Node.js (version 16+)  
+- npm or yarn  
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Steps  
+1. **Clone the Repository**:  
+   ```bash  
+   git clone https://github.com/Harkanni/lendsqr-fe-test.git  
+   cd lendsqr-fe-test  
+   ```  
 
-## Learn More
+2. **Install Dependencies**:  
+   ```bash  
+   npm install  
+   # or  
+   yarn install  
+   ```  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Run the Application**:  
+   ```bash  
+   npm start  
+   # or  
+   yarn start  
+   ```  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Build for Production**:  
+   ```bash  
+   npm run build  
+   # or  
+   yarn build  
+   ```  
+
+---
+
+## Usage  
+
+1. **Authentication**:  
+   - Navigate to `/login` and enter valid credentials.  
+   - Sessions persist in `localStorage`.  
+
+2. **Dashboard**:  
+   - View all users, their statuses, and details.  
+   - Pagination controls for navigation through user data.  
+
+3. **User Management**:  
+   - Status indicators such as *active*, *pending*, or *blacklisted*.  
+   - Dynamic table with expandable rows.  
+
+---
+
+## Technologies Used  
+
+- **React**: For building UI components.  
+- **TypeScript**: For type safety and better maintainability.  
+- **SCSS**: For styling and responsive design.  
+- **TanStack Table**: For efficient table data handling and pagination.  
+- **Redux Toolkit**: For state management.  
+- **React Router**: For handling navigation.  
+
+---
+
+## Future Improvements  
+
+- Add role-based access control (RBAC) for advanced user management.  
+- Introduce unit tests and integration tests using **Jest** and **React Testing Library**.  
+- Optimize for progressive web app (PWA) standards.  
+- Enhance accessibility (ARIA roles and keyboard navigation).  
+- Implement dark mode for better UX.  
+
+---
+
+## Contributing  
+
+Contributions are welcome! Follow these steps to contribute:  
+1. Fork the repository.  
+2. Create a feature branch: `git checkout -b feature-name`.  
+3. Commit changes: `git commit -m "Add a meaningful message"`.  
+4. Push to your fork: `git push origin feature-name`.  
+5. Open a pull request.  
+
+---
+
+## License  
+
+This project is licensed under the [MIT License](LICENSE).  
+
+---
+
+## Author  
+
+Developed by [Harkanni](https://github.com/Harkanni). For queries or support, feel free to reach out via GitHub Issues.  
+
+---
+
