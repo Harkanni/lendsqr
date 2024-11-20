@@ -1,75 +1,86 @@
 // src/components/ActionMenu.tsx
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../utils/DataContext";
 
+import './actionMenu.scss';
+import { blackListIcon, usersIcon6, viewIcon } from "../assets";
+
 
 interface ActionMenuProps {
-  userId: string;
+   userId: string;
 }
 
 const ActionMenu: React.FC<ActionMenuProps> = ({ userId }) => {
-  const [showMenu, setShowMenu] = useState(false);
-  const { updateUserStatus, users } = useUserContext();
-  const navigate = useNavigate();
+   const [showMenu, setShowMenu] = useState(false);
+   const menuRef = useRef<HTMLDivElement>(null);
+   const { updateUserStatus, users } = useUserContext();
+   const navigate = useNavigate();
+
+
+   useEffect(() => {
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+      };
+    }, []);
 
 
 
+
+
+
+   const toggleMenu = () => setShowMenu(!showMenu);
+   
+   const handleViewDetails = () => navigate(`/user/${userId}`);
+
+   const handleClickOutside = (event: MouseEvent) => {
+      // Close the menu if the click is outside the menu container
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setShowMenu(false);
+      }
+    };
   
 
 
-
-  const toggleMenu = () => setShowMenu(!showMenu);
-  const handleViewDetails = () => navigate(`/user/${userId}`);
-
-
-  const handleBlacklistUser = () => {
-    updateUserStatus(userId, "Blacklisted");
-    toggleMenu();
-  };
+   const handleBlacklistUser = () => {
+      updateUserStatus(userId, "Blacklisted");
+      toggleMenu();
+   };
 
 
-  const handleActivateUser = () => {
-   
-   updateUserStatus(userId, "Active");
-   
-    toggleMenu();
-  };
+   const handleActivateUser = () => {
 
-  return (
-    <div style={{ position: "relative" }}>
-      <button
-        onClick={toggleMenu}
-        style={{ border: "none", background: "transparent", cursor: "pointer" }}
-      >
-        &#x22EE; {/* Unicode for vertical ellipsis */}
-      </button>
-      {showMenu && (
-        <div
-          style={{
-            position: "absolute",
-            top: "20px",
-            right: "0",
-            background: "white",
-            boxShadow: "0 2px 5px rgba(0,0,0,0.2)",
-            zIndex: 100,
-          }}
-        >
-          <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            <li>
-              <button onClick={handleViewDetails}>View Details</button>
-            </li>
-            <li>
-              <button onClick={handleBlacklistUser}>Blacklist User</button>
-            </li>
-            <li>
-              <button onClick={handleActivateUser}>Activate User</button>
-            </li>
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+      updateUserStatus(userId, "Active");
+
+      toggleMenu();
+   };
+
+   return (
+      <div className="menu-container" onClick={toggleMenu}>
+        <button className="menu-button">
+          &#x22EE; {/* Vertical ellipsis */}
+        </button>
+        {showMenu && (
+          <div className="menu-dropdown">
+            <ul>
+              <li onClick={handleViewDetails}>
+                <img src={viewIcon} alt="View Details" />
+                View Details
+              </li>
+              <li onClick={handleBlacklistUser}>
+                <img src={blackListIcon} alt="Blacklist User" />
+                Blacklist User
+              </li>
+              <li onClick={handleActivateUser}>
+                <img src={usersIcon6} alt="Activate User" />
+                Activate User
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+    );
 };
 
 export default ActionMenu;

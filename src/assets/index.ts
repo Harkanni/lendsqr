@@ -37,8 +37,10 @@ import trippleUserIcon from './tripple-user.png'
 import documentIcon from './document.png'
 import dbIcon from './db.png'
 import loginIllustrationImg from './loginIllustration.png'
+import viewIcon from './np_view_1214519_000000 1.png'
+import blackListIcon from './np_delete-friend_3248001_000000 1.png'
+import usersIcon6 from './np_user_2995993_000000 1.png'
 
 
 
-
-export {loginIllustrationImg, signIn, lendsqrLogo, user1, searchIcon, notificationIcon, dropdownIcon, dropdownIcon2, briefcaseIcon, homeIcon, usersIcon, usersIcon2, loansIcon, handshakeIcon, piggybankIcon, handshakeIcon2, usersIcon3, usersIcon4, bankIcon, coinsIcon, orgIcon, galaxyIcon, usersIcon5, scrollIcon, chartbarIcon, slidersIcon, badgeIcon, clipboardIcon, ellipse, goldstarIcon, starIcon, logoutIcon, backarrowIcon, unionIcon, filterIcon, doubleUserIcon, trippleUserIcon, documentIcon, dbIcon }
+export {loginIllustrationImg, signIn, lendsqrLogo, user1, searchIcon, notificationIcon, dropdownIcon, dropdownIcon2, briefcaseIcon, homeIcon, usersIcon, usersIcon2, loansIcon, handshakeIcon, piggybankIcon, handshakeIcon2, usersIcon3, usersIcon4, bankIcon, coinsIcon, orgIcon, galaxyIcon, usersIcon5, scrollIcon, chartbarIcon, slidersIcon, badgeIcon, clipboardIcon, ellipse, goldstarIcon, starIcon, logoutIcon, backarrowIcon, unionIcon, filterIcon, doubleUserIcon, trippleUserIcon, documentIcon, dbIcon, viewIcon, blackListIcon, usersIcon6 }

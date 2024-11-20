@@ -24,7 +24,7 @@ const UserPage = () => {
       if (id) {
          fetchUserById(id); // Make an API call or fetch from local storage
       }
-   }, [id, users]); // Dependency array ensures the effect runs when `id` changes
+   }, [id]); // Dependency array ensures the effect runs when `id` changes
 
 
 
