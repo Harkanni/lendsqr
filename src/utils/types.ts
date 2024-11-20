@@ -1,5 +1,15 @@
 // src/types/types.ts
 
+
+export interface LoadingProps {
+   type: string;
+   color: string;
+   delay?: number | string;
+   height?: number | string;
+   width?: number | string;
+   className?: string;
+}
+
 export interface UserCredentials {
    email: string, 
    password: string

@@ -21,7 +21,8 @@ interface UserContextType {
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-const API_USERS_URL = 'https://run.mocky.io/v3/e2610d51-3549-47c5-bc2f-41f4ffd25b38';
+// const API_USERS_URL = 'https://run.mocky.io/v3/e2610d51-3549-47c5-bc2f-41f4ffd25b38';
+const API_USERS_URL = "https://run.mocky.io/v3/4989c9d5-ec0f-4b4f-9270-c4b456e7f9d8";
 const API_DETAILS_URL = 'https://run.mocky.io/v3/c4087e71-851a-43e5-9dff-eaab28a6cddc';
 
 const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {

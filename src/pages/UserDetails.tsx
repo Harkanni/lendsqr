@@ -7,6 +7,7 @@ import './userDetails.scss';
 import { backarrowIcon } from '../assets';
 import { useNavigate } from 'react-router-dom';
 import { useUserContext } from '../utils/DataContext';
+import Loading from '../components/Loading';
 
 
 
@@ -34,7 +35,8 @@ const UserPage = () => {
    }
 
 
-   if (loading) return <p>Loading user details...</p>;
+   // if (loading) return <p>Loading user details...</p>;
+   if (loading) return <Loading type='bars' color='#57b2c1' />;
 
    if (error) return <p>Error: {error}</p>;
 

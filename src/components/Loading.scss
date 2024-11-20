@@ -1,0 +1,15 @@
+@use '../styles/variables' as *;
+@use '../styles/_mixins.scss' as *;
+
+
+.LoadingContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond-to('phone') {
+    height: 80vh;
+  }
+}
