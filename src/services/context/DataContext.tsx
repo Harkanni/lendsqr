@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import axios from 'axios';
 import localforage from 'localforage';
 import { UserCredentials, UserDetails, Users } from '../../utils/types';
+import clearCache from '../../utils/clearCache';
 
 interface UserContextType {
    users: Users[] | null;
@@ -34,8 +35,12 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
    const [error, setError] = useState<string | null>(null);
    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
+
+   const USER_CACHE_KEY = "user-data-v1"
+   const USER_DETAILS_CACHE_KEY = "user-details-v1"
+
    const storage = localforage.createInstance({
-      name: 'user-data',
+      name: 'USER_CACHE_KEY',
    });
 
    // Fetch all users
@@ -44,13 +49,14 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       setError(null);
 
       try {
-         const cachedUsers = await storage.getItem<Users[]>('user-data');
+         const cachedUsers = await storage.getItem<Users[]>(USER_CACHE_KEY);
          if (cachedUsers?.length) {
             setUsers(cachedUsers);
          } else {
+            await clearCache(storage);
             const response = await axios.get<Users[]>(API_USERS_URL);
             setUsers(response.data);
-            await storage.setItem('user-data', response.data);
+            await storage.setItem(USER_CACHE_KEY, response.data);
          }
       } catch (err) {
          setError(axios.isAxiosError(err) ? err.message : 'An unexpected error occurred');
@@ -65,25 +71,25 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       setError(null);
 
       try {
-         // const cachedDetails = await storage.getItem<UserDetails[]>('user-details');
-         // console.log(cachedDetails)
-         // const cachedUser = cachedDetails?.find((u) => u.id === id);
-         // console.log("this is cached users: ", cachedUser)
-         // // const cachedUser = null;
+         const cachedDetails = await storage.getItem<UserDetails[]>(USER_DETAILS_CACHE_KEY);
+         console.log(cachedDetails)
+         const cachedUser = cachedDetails?.find((u) => u.id === id);
+         console.log("this is cached users: ", cachedUser)
+         // const cachedUser = null;
 
-         // if (cachedUser) {
-         //    console.log("cached user found: ", cachedUser)
-         //    setUser(cachedUser);
-         // } else {
-         const response = await axios.get<UserDetails[]>(API_DETAILS_URL);
-         console.log('User details fetched..: ', response)
-         const fetchedUser = response.data.find((u) => u.id === id);
-         if (!fetchedUser) throw new Error(`User with ID ${id} not found`);
+         if (cachedUser) {
+            console.log("cached user found: ", cachedUser)
+            setUser(cachedUser);
+         } else {
+            const response = await axios.get<UserDetails[]>(API_DETAILS_URL);
+            console.log('User details fetched..: ', response)
+            const fetchedUser = response.data.find((u) => u.id === id);
+            if (!fetchedUser) throw new Error(`User with ID ${id} not found`);
 
-         setUser(fetchedUser);
-         // const updatedCache = cachedDetails ? [...cachedDetails, fetchedUser] : [fetchedUser];
-         // await storage.setItem('user-details', updatedCache);
-         // }
+            setUser(fetchedUser);
+            const updatedCache = cachedDetails ? [...cachedDetails, fetchedUser] : [fetchedUser];
+            await storage.setItem(USER_DETAILS_CACHE_KEY, updatedCache);
+         }
       } catch (err) {
          setError(axios.isAxiosError(err) ? err.message : 'An unexpected error occurred');
       } finally {
@@ -100,7 +106,7 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       );
 
       try {
-         await storage.setItem('user-data', updatedUsers);
+         await storage.setItem(USER_CACHE_KEY, updatedUsers);
          setUsers(updatedUsers);
       } catch (err) {
          console.error('Failed to update user status in localforage:', err);
