@@ -1,4 +1,3 @@
-import localforage from "localforage";
 
 const clearCache = async (storage: LocalForageDriverDbMethods) => {
    try {

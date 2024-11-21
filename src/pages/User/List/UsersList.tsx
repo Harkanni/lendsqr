@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './UserList.scss'
 import {
@@ -23,7 +23,7 @@ import Pagination from "../../../components/Pagination/Pagination";
 import formatDate from "../../../utils/formatDate";
 
 const UserList: React.FC = () => {
-   const { users, loading, error, updateUserStatus } = useUserContext();
+   const { users, loading, error, } = useUserContext();
    const navigate = useNavigate();
    const [sorting, setSorting] = useState<SortingState>([]);
    const [showFilterModal, setShowFilterModal] = useState<boolean>(false);

@@ -36,8 +36,8 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
 
-   const USER_CACHE_KEY = "user-data-v1"
-   const USER_DETAILS_CACHE_KEY = "user-details-v1"
+   const USER_CACHE_KEY = "user-data-v2"
+   const USER_DETAILS_CACHE_KEY = "user-details-v2"
 
    const storage = localforage.createInstance({
       name: 'USER_CACHE_KEY',
@@ -129,6 +129,7 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
    useEffect(() => {
       fetchUsers();
+      // eslint-disable-next-line
    }, []);
 
    return (
