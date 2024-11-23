@@ -16,7 +16,7 @@ function App() {
 
          <Sidebar isVisible={sidebarVisible} />
 
-         <section className="main__content">
+         <section className="main__content" data-testid={"Main_Content"}>
             <Outlet />
          </section>
       </main>

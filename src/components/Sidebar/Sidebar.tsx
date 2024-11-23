@@ -14,7 +14,7 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
    };
    
    return (
-      <aside className={`sidebar ${isVisible ? 'visible' : ''}`}>
+      <aside className={`sidebar ${isVisible ? 'visible' : ''}`} data-testid={"Sidebar"}>
          <div className="sidebar__section">
             <div className="sidebar__item" style={{ background: '' }}>
                <img src={briefcaseIcon} alt="" className='sidebar__icon' style={{ marginRight: '1rem' }} />

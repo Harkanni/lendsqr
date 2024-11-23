@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "@tanstack/react-table": "^8.20.5",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.119",
@@ -45,5 +43,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@babel/register": "^7.25.9",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "chai": "^5.1.2",
+    "jest": "^27.5.1",
+    "mocha": "^10.8.2",
+    "sinon": "^19.0.2"
   }
 }

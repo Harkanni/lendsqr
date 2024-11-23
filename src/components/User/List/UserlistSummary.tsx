@@ -16,7 +16,7 @@ const UserSummary: React.FC = () => {
    return (
       <>
          <p className="user-title">User</p>
-         <div className="user-summary">
+         <div className="user-summary" data-testId={"user-summary"}>
             {summaryData.map((item, index) => (
                <div key={index} className="summary-card">
                   <div className="icon">

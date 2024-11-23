@@ -1,4 +1,8 @@
 const formatDate = (dateString: string): string => {
+
+   if (!dateString || isNaN(new Date(dateString).getTime())) {
+      return 'Invalid Date'; // Handle invalid dates gracefully
+    }
    const date = new Date(dateString);
    return new Intl.DateTimeFormat("en-US", {
       month: "short",
@@ -9,5 +13,6 @@ const formatDate = (dateString: string): string => {
       hour12: true,
    }).format(date);
 };
+ 
 
 export default formatDate

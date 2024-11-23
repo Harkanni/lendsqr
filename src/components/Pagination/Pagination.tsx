@@ -16,37 +16,33 @@ const Pagination = ({ table }: { table: Table<Users> }) => {
       const maxVisible = 3; // Max number of adjacent pages to display
 
       if (totalPages <= 5) {
-         // Case 1: Total pages <= 5, show all pages
-         for (let i = 1; i <= totalPages; i++) buttons.push(i);
+         // Show all pages if there are 5 or fewer pages
+         for (let i = 1; i <= totalPages; i++) {
+            buttons.push(i);
+         }
       } else {
-         // Always include the first page
+         // Always show first page
          buttons.push(1);
 
-         // Determine range of pages to display around the current page
+         // Determine the range of pages to display around the current page
          const startPage = Math.max(2, currentPage - 1);
          const endPage = Math.min(totalPages - 1, currentPage + 1);
-
-         // Add ellipsis if the range does not connect to the first page
-         // if (startPage > 2) {
-         //    buttons.push("...");
-         // }
 
          // Add pages in the range
          for (let i = startPage; i <= endPage; i++) {
             buttons.push(i);
          }
 
-         // Add ellipsis if the range does not connect to the last page
+         // Add ellipsis if there's a gap between pages
          if (endPage < totalPages - 1) {
             buttons.push("...");
          }
 
-         // Always include the last page
+         // Always show last page
          buttons.push(totalPages);
       }
 
-      // Generate button elements
-      return buttons.map((btn, index) =>
+      return buttons.map((btn, index) => (
          typeof btn === "number" ? (
             <button
                key={index}
@@ -60,8 +56,9 @@ const Pagination = ({ table }: { table: Table<Users> }) => {
                {btn}
             </span>
          )
-      );
+      ));
    }
+
 
    return (
       <>

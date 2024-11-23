@@ -6,7 +6,7 @@ import './Header.scss'
 
 const Header = ({ toggleSidebar }: { toggleSidebar: () => void }) => {
    return (
-      <div className="header-container">
+      <div className="header-container" data-testid={"Header"}>
       <header className="header">
         <nav className="nav">
           <div className="searchBarContainer">

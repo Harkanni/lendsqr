@@ -4,7 +4,7 @@ import './Loading.scss'
 
 
 const Loading = ({ type, color }: LoadingProps) => (
-   <div className='LoadingContainer'>
+   <div className='LoadingContainer' data-testid='loading-container'>
       <ReactLoading type={type} color={color} />
    </div>
 );

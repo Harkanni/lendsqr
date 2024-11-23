@@ -27,13 +27,6 @@ const Login = () => {
 
    const navigate = useNavigate();
 
-   // const handleLogin = () => {
-   //    // Simulating login
-   //    const user = { email: email, password: password };
-   //    localStorage.setItem('lendqr_user', JSON.stringify(user)); // Save user info in localStorage
-   //    navigate('/users'); // Redirect to the users list page
-   // };
-
    const handleLogin = () => {
       const userCredentials = { password: password, email: email }; // Replace with actual login logic
       login(userCredentials);
@@ -77,11 +70,9 @@ const Login = () => {
                         placeholder="Enter your password"
                      />
                      <p
-                        // type="button"
                         onClick={toggleShowPassword}
                         style={{
                            marginLeft: '10px',
-                           // padding: '5px',
                            cursor: 'pointer',
                            background: 'none',
                            border: 'none',
