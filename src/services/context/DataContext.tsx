@@ -22,8 +22,10 @@ interface UserContextType {
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-const API_USERS_URL = "https://run.mocky.io/v3/10c34513-f211-47dc-800c-976484b99a77";
-const API_DETAILS_URL = "https://run.mocky.io/v3/bcc89cb0-6079-4000-a7f3-19fd6bec5909";
+// const API_USERS_URL = "https://run.mocky.io/v3/10c34513-f211-47dc-800c-976484b99a77";
+// const API_USERS_URL = "https://run.mocky.io/v3/e0e405f3-7e6e-4ef6-b747-96995336d9dd";
+const API_USERS_URL = "https://run.mocky.io/v3/49262322-0373-4dda-bdd9-721b4e1a116f";
+const API_DETAILS_URL = "https://run.mocky.io/v3/bbcc2e5c-503f-468c-998c-7fd450eec3fd";
 
 const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
@@ -35,8 +37,8 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
 
-   const USER_CACHE_KEY = "user-data-v3"
-   const USER_DETAILS_CACHE_KEY = "user-details-v3"
+   const USER_CACHE_KEY = "user-data-v1"
+   const USER_DETAILS_CACHE_KEY = "user-details-v1"
 
    const storage = localforage.createInstance({
       name: 'USER_CACHE_KEY',
