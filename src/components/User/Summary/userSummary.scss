@@ -1,6 +1,6 @@
 .user-summary-page {
    background-color: #fff;
-   padding: 20px;
+   padding: 20px 20px 1px;
    border-radius: 5px;
    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
    font-family: 'Work Sans';
@@ -58,7 +58,7 @@
        display: flex;
        // gap: 20px;
        justify-content: space-between;
-       overflow-x: hidden;
+       overflow-x: scroll;
        white-space: nowrap;
  
        a {
@@ -71,7 +71,11 @@
          transition: all 0.3s ease-in-out;
  
          &:hover {
-           border-bottom: 2px solid #2b7a78;
+           border-bottom: 3px solid #2b7a78;
+         }
+
+         &:first-of-type {
+            border-bottom: 3px solid #39CDCC;
          }
        }
      }
@@ -88,5 +92,9 @@
      height: 5px !important;
      width: 100% !important;
      border-radius: 5rem;
+   }
+
+   nav a {
+      font-size: 0.9rem !important;
    }
  }

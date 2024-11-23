@@ -2,9 +2,11 @@
 import React from 'react';
 import './Sidebar.scss'; // Importing the CSS file for styling
 import { badgeIcon, bankIcon, briefcaseIcon, chartbarIcon, clipboardIcon, coinsIcon, dropdownIcon2, galaxyIcon, handshakeIcon, handshakeIcon2, homeIcon, loansIcon, logoutIcon, orgIcon, piggybankIcon, scrollIcon, slidersIcon, tireIcon, usersIcon, usersIcon2, usersIcon3, usersIcon4, usersIcon5 } from '../../assets';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, } from 'react-router-dom';
 
 const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
+   const location = useLocation()
+   console.log(location.pathname)
 
    const navigate = useNavigate();
 
@@ -22,10 +24,10 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
                <img src={dropdownIcon2} alt="" style={{ marginLeft: '1rem' }} />
             </div>
          </div>
-         <div className="sidebar__section">
-            <div className="sidebar__item">
+         <div className={` ${location.pathname === '/' ? 'sidebar__section active' : 'sidebar__section'}`}>
+            <div className={`sidebar__item`}>
                <img src={homeIcon} alt="home icon" className='sidebar__icon' />
-               Dashboard
+               <a href="/">Dashboard</a>
             </div>
          </div>
 

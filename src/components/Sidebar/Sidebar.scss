@@ -3,7 +3,7 @@
   width: 283px;
   height: 100vh;
   background-color: #fff;
-  padding: 20px 20px 5rem;
+  padding-block: 20px;
   position: fixed;
   top: 5.75rem;
   font-family: 'Work Sans';
@@ -20,6 +20,23 @@
 .sidebar__section {
   margin-bottom: 20px;
   opacity: 70%;
+  //   padding-inline: 2rem;
+
+  &.active {
+    background: #39cdcc;
+    border-left: 8px solid #213f7d;
+    //  padding-left: calc(2rem - 8px);
+
+    .sidebar__item {
+      padding-inline: calc(2rem - 8px);
+    }
+  }
+
+  //   &:hover {
+  //    background: #39cdcc;
+  //    border-left: 8px solid #213f7d;
+  //    padding-left: calc(2rem - 8px);
+  //  }
 }
 
 .sidebar__title {
@@ -27,27 +44,30 @@
   color: #6c757d;
   text-transform: uppercase;
   margin-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 2rem;
 }
 
 .sidebar__item {
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding-block: 10px;
+  padding-inline: 2rem;
   margin-bottom: 10px;
   font-size: 14px;
   color: #495057;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  //   transition: background-color 0.3s ease;
+  //   background: #000;
+
+  &:hover {
+   background: #39cdcc;
+   border-left: 8px solid #213f7d;
+   padding-left: calc(2rem - 8px);
+ }
 }
 
 .sidebar__icon {
   margin-right: 1rem;
-}
-
-.sidebar__item:hover {
-  background-color: #e9ecef;
-  border-radius: 4px;
 }
 
 .sidebar__item i {
