@@ -83,7 +83,7 @@ const UserList: React.FC = () => {
          ),
          cell: (info) => (
             <div
-               style={{ cursor: "pointer" }}
+               style={{ cursor: "pointer", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}
                onClick={() => navigate(`/user/${info.row.original.id}`)}
             >
                {info.getValue() as string}

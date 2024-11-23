@@ -72,15 +72,7 @@ const FilterModal: React.FC<FilterModalProps> = ({ toggleModal }) => {
 
             <div className="year date">
                <h5>Date</h5>
-               <input type="date" />
-               <select value={year} onChange={(e) => setYear(e.target.value)}>
-                  <option value="" disabled>Select Year</option>
-                  {new Array(30).fill(0).map((_, idx) => (
-                     <option key={idx} value={2020 - idx}>
-                        {2020 - idx}
-                     </option>
-                  ))}
-               </select>
+               <input type="date" />               
             </div>
 
             <div className="buttons">

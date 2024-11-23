@@ -13,6 +13,7 @@
   font-family: "Arial", sans-serif;
   top: 10%;
   left: 2%;
+  box-shadow: 1px 2px 20px 8px #0000000A;
 
   .filters {
     display: flex;
@@ -27,6 +28,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-bottom: 1rem;
   }
 
   input,
