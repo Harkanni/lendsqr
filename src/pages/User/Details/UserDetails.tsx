@@ -18,7 +18,7 @@ const UserPage = () => {
 
    const { id } = useParams<{ id: string }>(); // Get the dynamic `id` from the URL
 
-   const { fetchUserById, error, loading, user, users } = useUserContext();
+   const { fetchUserById, error, loading, user, updateUserStatus } = useUserContext();
 
 
    useEffect(() => {
@@ -53,13 +53,13 @@ const UserPage = () => {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                <p style={{ letterSpacing: '-0.3px', fontFamily: 'Work Sans', fontSize: '16px', fontWeight: '600', lineHeight: '28.15px', color: '#545F7D' }}>User Details</p>
                <div style={{ display: 'flex', gap: '1rem' }}>
-                  <button style={{ padding: '0.75rem 1.75rem', borderRadius: '8px', border: '1px solid #E4033B', outline: 'none', color: '#E4033B', fontWeight: '400', fontSize: '14px', background: 'transparent', cursor: 'pointer' }}>Blacklist</button>
-                  <button style={{ padding: '0.75rem 0.75rem', borderRadius: '8px', border: '1px solid #39CDCC', outline: 'none', color: '#39CDCC', fontWeight: '400', fontSize: '14px', background: 'transparent', cursor: 'pointer' }}>Activate User</button>
+                  <button onClick={() => updateUserStatus(id!, 'Blacklisted')} className={`${user?.status == "Blacklisted" ? 'blacklistUser' : ''}`} style={{ padding: '0.75rem 1.75rem', borderRadius: '8px', border: '1px solid #E4033B', outline: 'none', color: '#E4033B', fontWeight: '400', fontSize: '14px', background: 'transparent', cursor: 'pointer' }}>Blacklist</button>
+                  <button onClick={() => updateUserStatus(id!, 'Active')} className={`${user?.status == "Active" ? 'activeUser' : ''}`} style={{ padding: '0.75rem 0.75rem', borderRadius: '8px', border: '1px solid #39CDCC', outline: 'none', color: '#39CDCC', fontWeight: '400', fontSize: '14px', background: 'transparent', cursor: 'pointer' }}>Activate User</button>
                </div>
             </div>
          </div>
          <UserSummary userInfo={user} />
-         <UserDetails userInfo={user}/>
+         <UserDetails userInfo={user} />
       </div>
    );
 };

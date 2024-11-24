@@ -6,6 +6,7 @@ import clearCache from '../../utils/clearCache';
 
 interface UserContextType {
    users: Users[] | null;
+   userDetails: UserDetails[] | null;
    user: UserDetails | null;
    loading: boolean;
    error: string | null;
@@ -22,26 +23,23 @@ interface UserContextType {
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-// const API_USERS_URL = "https://run.mocky.io/v3/10c34513-f211-47dc-800c-976484b99a77";
-// const API_USERS_URL = "https://run.mocky.io/v3/e0e405f3-7e6e-4ef6-b747-96995336d9dd";
 const API_USERS_URL = "https://run.mocky.io/v3/49262322-0373-4dda-bdd9-721b4e1a116f";
 const API_DETAILS_URL = "https://run.mocky.io/v3/bbcc2e5c-503f-468c-998c-7fd450eec3fd";
 
 const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-
    const [users, setUsers] = useState<Users[]>([]);
+   const [userDetails, setUserDetails] = useState<UserDetails[] | null>(null);
    const [user, setUser] = useState<UserDetails | null>(null);
    const [userCredentials, setUserCredentials] = useState<UserCredentials>({ email: '', password: '' });
    const [loading, setLoading] = useState(false);
    const [error, setError] = useState<string | null>(null);
    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
-
-   const USER_CACHE_KEY = "user-data-v1"
-   const USER_DETAILS_CACHE_KEY = "user-details-v1"
+   const USER_CACHE_KEY = "user-data-v1";
+   const USER_DETAILS_CACHE_KEY = "user-details-v1";
 
    const storage = localforage.createInstance({
-      name: 'USER_CACHE_KEY',
+      name: 'USER_CACHE',
    });
 
    // Fetch all users
@@ -73,23 +71,19 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
       try {
          const cachedDetails = await storage.getItem<UserDetails[]>(USER_DETAILS_CACHE_KEY);
-         console.log(cachedDetails)
          const cachedUser = cachedDetails?.find((u) => u.id === id);
-         console.log("this is cached users: ", cachedUser)
-         // const cachedUser = null;
 
          if (cachedUser) {
-            console.log("cached user found: ", cachedUser)
             setUser(cachedUser);
          } else {
             const response = await axios.get<UserDetails[]>(API_DETAILS_URL);
-            console.log('User details fetched..: ', response)
             const fetchedUser = response.data.find((u) => u.id === id);
             if (!fetchedUser) throw new Error(`User with ID ${id} not found`);
 
             setUser(fetchedUser);
             const updatedCache = cachedDetails ? [...cachedDetails, fetchedUser] : [fetchedUser];
             await storage.setItem(USER_DETAILS_CACHE_KEY, updatedCache);
+            setUserDetails(updatedCache);
          }
       } catch (err) {
          setError(axios.isAxiosError(err) ? err.message : 'An unexpected error occurred');
@@ -102,13 +96,27 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
    const updateUserStatus = async (userId: string, newStatus: string) => {
       if (!users) return;
 
+      // Update `users` and `userDetails` state
       const updatedUsers = users.map((u) =>
          u.id === userId ? { ...u, status: newStatus } : u
       );
 
+      const updatedUserDetails = userDetails?.map((u) =>
+         u.id === userId ? { ...u, status: newStatus } : u
+      );
+
+      // Update the `user` state if the current user matches
+      const updatedUser = updatedUserDetails?.find((u) => u.id === userId) || null;
+
       try {
-         await storage.setItem(USER_CACHE_KEY, updatedUsers);
+         await Promise.all([
+            storage.setItem(USER_CACHE_KEY, updatedUsers),
+            storage.setItem(USER_DETAILS_CACHE_KEY, updatedUserDetails),
+         ]);
+
          setUsers(updatedUsers);
+         setUserDetails(updatedUserDetails!);
+         setUser(updatedUser);
       } catch (err) {
          console.error('Failed to update user status in localforage:', err);
       }
@@ -130,13 +138,13 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
    useEffect(() => {
       fetchUsers();
-      // eslint-disable-next-line
    }, []);
 
    return (
       <UserContext.Provider
          value={{
             users,
+            userDetails,
             user,
             loading,
             error,

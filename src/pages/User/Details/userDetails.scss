@@ -18,7 +18,7 @@
     hr {
       margin-top: 1.5rem !important;
     }
-    
+
     .info-group {
       // display: flex;
       // flex-wrap: wrap;
@@ -52,6 +52,18 @@
       }
     }
   }
+}
+
+.activeUser {
+   color: white !important;
+   font-weight: 500;
+   background-color: rgb(52, 164, 83) !important;
+}
+
+.blacklistUser {
+  color: white !important;
+  font-weight: 500;
+  background-color: rgba(228, 3, 59, 0.77) !important;
 }
 
 @media (max-width: 768px) {
