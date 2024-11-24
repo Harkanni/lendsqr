@@ -22,15 +22,17 @@
   opacity: 70%;
   //   padding-inline: 2rem;
 
-  &.active {
-    background: #39cdcc;
-    border-left: 8px solid #213f7d;
-    //  padding-left: calc(2rem - 8px);
+//   &.active {
+//    //  background: #39cdcc;
+//    //  border-left: 8px solid #213f7d;
+//     //  padding-left: calc(2rem - 8px);
 
-    .sidebar__item {
-      padding-inline: calc(2rem - 8px);
-    }
-  }
+//     .sidebar__item {
+//       padding-inline: calc(2rem - 8px);
+//       background: #39cdcc;
+//       border-left: 8px solid #213f7d;
+//     }
+//   }
 
   //   &:hover {
   //    background: #39cdcc;
@@ -59,11 +61,26 @@
   //   transition: background-color 0.3s ease;
   //   background: #000;
 
+
+  &.active {
+   //  background: #39cdcc;
+   //  border-left: 8px solid #213f7d;
+    //  padding-left: calc(2rem - 8px);
+
+   //  .sidebar__item {
+      padding-inline: calc(2rem - 8px);
+      background: #39cdcc !important;
+      border-left: 8px solid #213f7d;
+   //  }
+  }
+
   &:hover {
-   background: #39cdcc;
-   border-left: 8px solid #213f7d;
-   padding-left: calc(2rem - 8px);
- }
+    background: #39cdcc;
+    border-left: 8px solid #213f7d;
+    padding-left: calc(2rem - 8px);
+  }
+
+  
 }
 
 .sidebar__icon {

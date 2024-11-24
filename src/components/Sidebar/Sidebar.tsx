@@ -31,9 +31,9 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
             </div>
          </div>
 
-         <div className="sidebar__section">
+         <div className={` ${location.pathname === '/users' ? 'sidebar__section active' : 'sidebar__section'}`}>
             <p className="sidebar__title">CUSTOMERS</p>
-            <div className="sidebar__item">
+            <div className={` ${location.pathname === '/users' ? 'sidebar__item active' : 'sidebar__item'}`}>
                <img src={usersIcon2} alt="user icon" className='sidebar__icon' />
                <a href="/users">Users</a>
             </div>
