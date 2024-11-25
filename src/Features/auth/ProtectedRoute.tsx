@@ -3,15 +3,8 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useUserContext } from '../../services/context/DataContext';
 
 const ProtectedRoute: React.FC = () => {
+   // eslint-disable-next-line
    const { isAuthenticated } = useUserContext();
-
-
-   // useEffect(() => {
-   //    const user = localStorage.getItem('lendqr_user'); // Assume 'user' key holds login info
-   //    if (!user) {
-   //       navigate('/login'); // Redirect to login if not logged in
-   //    }
-   // }, [navigate]);
 
    const user = localStorage.getItem('lendqr_user'); // Assume 'user' key holds login info
 

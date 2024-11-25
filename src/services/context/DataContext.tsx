@@ -138,6 +138,8 @@ const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 
    useEffect(() => {
       fetchUsers();
+
+      // eslint-disable-next-line
    }, []);
 
    return (

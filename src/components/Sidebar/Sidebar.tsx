@@ -24,7 +24,7 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
                <img src={dropdownIcon2} alt="" style={{ marginLeft: '1rem' }} />
             </div>
          </div>
-         <div className={` ${location.pathname === '/' ? 'sidebar__section active' : 'sidebar__section'}`}>
+         <div className={`sidebar__section ${location.pathname === '/' && 'sidebar__item active' }`}>
             <div className={`sidebar__item`}>
                <img src={homeIcon} alt="home icon" className='sidebar__icon' />
                <a href="/">Dashboard</a>
