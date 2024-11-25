@@ -1,7 +1,7 @@
 import React from 'react'
 import { useUserContext } from '../../services/context/DataContext';
 import './Pagination.scss';
-import { Users } from '../../utils/types';
+import { Users } from '../../types/types';
 import { Table } from '@tanstack/react-table';
 
 const Pagination = ({ table }: { table: Table<Users> }) => {

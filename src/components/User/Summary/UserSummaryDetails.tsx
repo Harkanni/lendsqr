@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserDetails as UserProps } from '../../../utils/types';
+import { UserDetails as UserProps } from '../../../types/types';
 import generateAmountRange from '../../../utils/generateAmountRange';
 
 const UserDetails = ({ userInfo }: { userInfo: UserProps | null }) => {

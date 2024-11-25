@@ -24,8 +24,16 @@ This repository contains a frontend web application built for the Lendsqr techni
 ### Login Page  
 ![Login Page Screenshot](./screenshots/login.png)  
 
+![Responsive Login Page](./screenshots/responisve_login.png)
+
 ### Dashboard  
 ![Dashboard Screenshot](./screenshots/dashboard.png)  
+
+![Responsive Dashboard Screenshot](./screenshots/responsive_dashboard.png)
+
+### User Details
+![User Details](./screenshots/user_details.png)
+![Responsive User Details Screenshot](./screenshots/responsive_user_details.png)
 
 ---
 
@@ -43,7 +51,6 @@ src/
 ├── features/           # Feature-specific modules (auth, dashboard, users)  
 ├── hooks/              # Custom React hooks  
 ├── services/           # API service files for network requests  
-├── store/              # State management (e.g., Redux slices)  
 ├── types/              # Application-wide TypeScript definitions  
 ├── utils/              # Helper utilities and constants  
 └── App.tsx             # Main application entry point  
@@ -93,7 +100,7 @@ src/
    - Navigate to `/login` and enter valid credentials.  
    - Sessions persist in `localStorage`.  
 
-2. **Dashboard**:  
+2. **Users**:  
    - View all users, their statuses, and details.  
    - Pagination controls for navigation through user data.  
 
@@ -109,7 +116,6 @@ src/
 - **TypeScript**: For type safety and better maintainability.  
 - **SCSS**: For styling and responsive design.  
 - **TanStack Table**: For efficient table data handling and pagination.  
-- **Redux Toolkit**: For state management.  
 - **React Router**: For handling navigation.  
 
 ---
@@ -117,7 +123,7 @@ src/
 ## Future Improvements  
 
 - Add role-based access control (RBAC) for advanced user management.  
-- Introduce unit tests and integration tests using **Jest** and **React Testing Library**.  
+- Introduce more unit tests and integration tests using **Jest** and **React Testing Library**.  
 - Optimize for progressive web app (PWA) standards.  
 - Enhance accessibility (ARIA roles and keyboard navigation).  
 - Implement dark mode for better UX.  

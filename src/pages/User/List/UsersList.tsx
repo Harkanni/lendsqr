@@ -12,7 +12,7 @@ import {
 } from "@tanstack/react-table";
 import UserlistSummary from '../../../components/User/List/UserlistSummary'
 import { useUserContext } from '../../../services/context/DataContext';
-import { Users } from "../../../utils/types";
+import { Users } from "../../../types/types";
 import ActionMenu from "../../../components/ActionMenu/ActionMenu";
 import FilterModal from "../../../components/Filter/FilterModal";
 import sortIcon from "../../../assets/icons/filter.png";
