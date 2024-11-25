@@ -13,7 +13,6 @@ const FilterModal: React.FC<FilterModalProps> = ({ toggleModal }) => {
    const [status, setStatus] = useState<string>("");
 
    const handleFilter = () => {
-      console.log("Filtering with:", { name, organization, year });
       toggleModal();
    };
 

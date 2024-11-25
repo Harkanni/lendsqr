@@ -3,8 +3,6 @@ import { UserDetails as UserProps } from '../../../utils/types';
 import generateAmountRange from '../../../utils/generateAmountRange';
 
 const UserDetails = ({ userInfo }: { userInfo: UserProps | null }) => {
-   console.log("user Info: ", userInfo);
-
 
 
    return (

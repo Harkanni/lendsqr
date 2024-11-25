@@ -6,7 +6,6 @@ import { useNavigate, useLocation, } from 'react-router-dom';
 
 const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
    const location = useLocation()
-   console.log(location.pathname)
 
    const navigate = useNavigate();
 
