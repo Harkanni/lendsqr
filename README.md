@@ -4,7 +4,7 @@
 ![Contributors](https://img.shields.io/github/contributors/Harkanni/lendsqr-fe-test?style=flat-square)  
 ![License](https://img.shields.io/github/license/Harkanni/lendsqr-fe-test?style=flat-square)  
 
-Welcome to the **Lendsqr Frontend Test**! This project is a **user management dashboard** created to showcase technical skills in frontend development. The application highlights responsive design, efficient user handling, and clean code practices. It was crafted as part of a technical evaluation but is also a demonstration of how thoughtful design meets technical expertise.
+This documentation outlines the implementation and design of the **Lendsqr frontend engineering project**!. Designed as a technical assessment, the project demonstrates the application of modern web development standards, effective state management, robust testing practices, and user-focused design. The primary goal was to showcase technical skills in frontend development; build a React-based application that adheres to industry best practices while maintaining scalability, maintainability, and performance.
 
 ---
 
