@@ -1,91 +1,107 @@
+Here’s an enhanced and more detailed **README.md** for your project that tells a story, incorporates visuals strategically, and guides readers through your journey in building this project:
+
+---
+
 # Lendsqr Frontend Test  
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Harkanni/lendsqr-fe-test/ci.yml?style=flat-square)  
 ![Contributors](https://img.shields.io/github/contributors/Harkanni/lendsqr-fe-test?style=flat-square)  
 ![License](https://img.shields.io/github/license/Harkanni/lendsqr-fe-test?style=flat-square)  
 
-This repository contains a frontend web application built for the Lendsqr technical test. The application is a user management dashboard with features such as authentication, user listing, pagination, and status indicators (e.g., active, blacklisted). It demonstrates clean code practices, UI responsiveness, and an organized project structure.  
+Welcome to the **Lendsqr Frontend Test**! This project is a **user management dashboard** created to showcase technical skills in frontend development. The application highlights responsive design, efficient user handling, and clean code practices. It was crafted as part of a technical evaluation but is also a demonstration of how thoughtful design meets technical expertise.
 
 ---
 
-## Features  
+## 🚀 Features  
 
-### Core Functionality  
-- **User Management Dashboard**: Displays user data in a paginated table with sorting and filtering capabilities.  
-- **Authentication**: Login functionality with session persistence using `localStorage`.  
-- **Responsive Design**: Adaptable UI for both desktop and mobile screens.  
-- **Status Indicators**: Users categorized as active, blacklisted, etc., with visually distinct badges.  
-- **Pagination**: Intuitive pagination with ellipsis for large datasets.  
+### 🌟 Core Functionality  
+- **Authentication**: A secure login system with session persistence stored in `localStorage`.  
+- **User Dashboard**: Displays user data with a clean interface, including filtering and sorting.  
+- **Status Indicators**: Visual cues like "Active" or "Blacklisted" badges enhance data interpretation.  
+- **Responsive Design**: Fluid UI for both desktop and mobile devices.  
+- **Pagination**: Elegant handling of large datasets with pagination controls.  
+
+### ✨ Highlights  
+- User interface built with **attention to detail** for seamless navigation.  
+- API integrations with real-world handling of asynchronous data.  
+- Scalability ensured with a well-thought-out project structure.  
 
 ---
 
-## Screenshots  
+## 🌄 Visual Walkthrough  
 
-### Login Page  
+### 🔐 Login Page  
+The login page is your gateway to the dashboard, combining simplicity with functionality.  
+
 ![Login Page Screenshot](./screenshots/login.png)  
+*(Mobile-friendly version shown below)*  
+![Responsive Login Page](./screenshots/responsive_login.png)  
 
-![Responsive Login Page](./screenshots/responisve_login.png)
+### 📊 Dashboard  
+Once logged in, the dashboard showcases users with filters, sorters, and status badges.  
 
-### Dashboard  
 ![Dashboard Screenshot](./screenshots/dashboard.png)  
+*(Mobile dashboard view)*  
+![Responsive Dashboard Screenshot](./screenshots/responsive_dashboard.png)  
 
-![Responsive Dashboard Screenshot](./screenshots/responsive_dashboard.png)
+### 📄 User Details  
+Dive deeper into user profiles with detailed information.  
 
-### User Details
-![User Details](./screenshots/user_details.png)
-![Responsive User Details Screenshot](./screenshots/responsive_user_details.png)
+![User Details](./screenshots/user_details.png)  
+*(Optimized for responsive layouts)*  
+![Responsive User Details Screenshot](./screenshots/responsive_user_details.png)  
+
+Visuals provide clarity and help users anticipate how the app will look and function.
 
 ---
 
-## Project Structure  
+## 🛠️ Project Structure  
 
-This project has been structured for maintainability and scalability:  
+To ensure scalability and maintainability, the project follows a structured directory layout:  
 
 ```plaintext  
 src/  
-├── assets/             # Static assets (images, icons, styles)  
-│   ├── images/         # Image files  
-│   ├── icons/          # Icon assets  
-│   └── styles/         # SCSS or CSS files  
-├── components/         # Reusable UI components (Button, Pagination, Loader, etc.)  
-├── features/           # Feature-specific modules (auth, dashboard, users)  
+├── assets/             # Static assets like images, icons, styles  
+├── components/         # Reusable UI components (Buttons, Modals, etc.)  
+├── features/           # Feature-specific logic and modules  
 ├── hooks/              # Custom React hooks  
-├── services/           # API service files for network requests  
-├── types/              # Application-wide TypeScript definitions  
-├── utils/              # Helper utilities and constants  
+├── services/           # API handling and network requests  
+├── types/              # TypeScript definitions  
+├── utils/              # Utility functions and constants  
 └── App.tsx             # Main application entry point  
 ```  
 
 ---
 
-## Installation and Setup  
+## 💻 Installation and Setup  
 
 ### Prerequisites  
-- Node.js (version 16+)  
-- npm or yarn  
+- **Node.js** (version 16 or later)  
+- **npm** or **yarn** package manager  
 
 ### Steps  
-1. **Clone the Repository**:  
+
+1. **Clone the Repository**  
    ```bash  
    git clone https://github.com/Harkanni/lendsqr-fe-test.git  
    cd lendsqr-fe-test  
    ```  
 
-2. **Install Dependencies**:  
+2. **Install Dependencies**  
    ```bash  
    npm install  
    # or  
    yarn install  
    ```  
 
-3. **Run the Application**:  
+3. **Start the Development Server**  
    ```bash  
    npm start  
    # or  
    yarn start  
    ```  
 
-4. **Build for Production**:  
+4. **Build for Production**  
    ```bash  
    npm run build  
    # or  
@@ -94,62 +110,75 @@ src/
 
 ---
 
-## Usage  
+## 🧭 How to Use  
 
-1. **Authentication**:  
-   - Navigate to `/login` and enter valid credentials.  
-   - Sessions persist in `localStorage`.  
+1. **Login**  
+   - Navigate to `/login`.  
+   - Enter valid credentials to proceed to the dashboard.  
 
-2. **Users**:  
-   - View all users, their statuses, and details.  
-   - Pagination controls for navigation through user data.  
+2. **Explore the Dashboard**  
+   - Browse user data.  
+   - Use filters and sorters for quick navigation.  
+   - Check user status through badges.  
 
-3. **User Management**:  
-   - Status indicators such as *active*, *pending*, or *blacklisted*.  
-   - Dynamic table with expandable rows.  
-
----
-
-## Technologies Used  
-
-- **React**: For building UI components.  
-- **TypeScript**: For type safety and better maintainability.  
-- **SCSS**: For styling and responsive design.  
-- **TanStack Table**: For efficient table data handling and pagination.  
-- **React Router**: For handling navigation.  
+3. **User Details**  
+   - Expand rows or click to view detailed user profiles.  
 
 ---
 
-## Future Improvements  
+## 🛠️ Technologies  
 
-- Add role-based access control (RBAC) for advanced user management.  
-- Introduce more unit tests and integration tests using **Jest** and **React Testing Library**.  
-- Optimize for progressive web app (PWA) standards.  
-- Enhance accessibility (ARIA roles and keyboard navigation).  
-- Implement dark mode for better UX.  
+This project leverages modern tools and libraries:  
 
----
-
-## Contributing  
-
-Contributions are welcome! Follow these steps to contribute:  
-1. Fork the repository.  
-2. Create a feature branch: `git checkout -b feature-name`.  
-3. Commit changes: `git commit -m "Add a meaningful message"`.  
-4. Push to your fork: `git push origin feature-name`.  
-5. Open a pull request.  
+- **React**: Core framework for building the user interface.  
+- **TypeScript**: For static typing and code reliability.  
+- **SCSS**: Clean and responsive styling.  
+- **TanStack Table**: Advanced table functionality for sorting and pagination.  
+- **React Router**: Intuitive navigation management.  
 
 ---
 
-## License  
+## 🔮 Future Enhancements  
 
-This project is licensed under the [MIT License](LICENSE).  
+This project serves as a foundation, with room for more advanced features:  
+
+- **Role-Based Access Control (RBAC)**: Enhance security with granular permissions.  
+- **Dark Mode**: Introduce a dark mode toggle for better user experience.  
+- **Unit and Integration Testing**: Strengthen reliability with **Jest** and **React Testing Library**.  
+- **Accessibility Improvements**: Add ARIA roles and ensure keyboard navigation support.  
 
 ---
 
-## Author  
+## 🙌 Contributing  
 
-Developed by [Harkanni](https://github.com/Harkanni). For queries or support, feel free to reach out via GitHub Issues.  
+We welcome contributions! Here’s how you can contribute:  
+
+1. **Fork the Repository**.  
+2. **Create a Feature Branch**.  
+   ```bash  
+   git checkout -b feature-name  
+   ```  
+3. **Commit Your Changes**.  
+   ```bash  
+   git commit -m "Add meaningful message here"  
+   ```  
+4. **Push Your Changes**.  
+   ```bash  
+   git push origin feature-name  
+   ```  
+5. **Open a Pull Request**.  
+
+Let’s build something amazing together!  
 
 ---
 
+## 📜 License  
+
+This project is licensed under the [MIT License](./LICENSE).  
+
+---
+
+## 👤 Author  
+
+Developed by [Harkanni](https://github.com/Harkanni).  
+For queries, feedback, or support, please open an issue or contact me directly.  
