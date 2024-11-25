@@ -1,7 +1,3 @@
-Here’s an enhanced and more detailed **README.md** for your project that tells a story, incorporates visuals strategically, and guides readers through your journey in building this project:
-
----
-
 # Lendsqr Frontend Test  
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Harkanni/lendsqr-fe-test/ci.yml?style=flat-square)  
