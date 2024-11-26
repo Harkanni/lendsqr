@@ -1,5 +1,7 @@
 # Lendsqr Frontend Test  
 
+<!-- Welcome to the **Lendsqr Frontend Test**! This project is a **user management dashboard** created to showcase technical skills in frontend development. The application highlights responsive design, efficient user handling, and clean code practices. It was crafted as part of a technical evaluation but is also a demonstration of how thoughtful design meets technical expertise. -->
+
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Harkanni/lendsqr-fe-test/ci.yml?style=flat-square)  
 ![Contributors](https://img.shields.io/github/contributors/Harkanni/lendsqr-fe-test?style=flat-square)  
 ![License](https://img.shields.io/github/license/Harkanni/lendsqr-fe-test?style=flat-square)  

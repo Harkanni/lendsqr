@@ -13,7 +13,7 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
       localStorage.removeItem('lendqr_user');
       navigate('/login');
    };
-   
+
    return (
       <aside className={`sidebar ${isVisible ? 'visible' : ''}`} data-testid={"Sidebar"}>
          <div className="sidebar__section">
@@ -23,8 +23,8 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
                <img src={dropdownIcon2} alt="" style={{ marginLeft: '1rem' }} />
             </div>
          </div>
-         <div className={`sidebar__section ${location.pathname === '/' && 'sidebar__item active' }`}>
-            <div className={`sidebar__item`}>
+         <div className={`sidebar__section ${location.pathname === '/' && 'sidebar__item active'}`}>
+            <div className={`sidebar__item ${location.pathname === '/' && 'dash'} `} style={{}}>
                <img src={homeIcon} alt="home icon" className='sidebar__icon' />
                <a href="/">Dashboard</a>
             </div>
@@ -32,10 +32,13 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
 
          <div className={` ${location.pathname === '/users' ? 'sidebar__section active' : 'sidebar__section'}`}>
             <p className="sidebar__title">CUSTOMERS</p>
-            <div className={` ${location.pathname === '/users' ? 'sidebar__item active' : 'sidebar__item'}`}>
-               <img src={usersIcon2} alt="user icon" className='sidebar__icon' />
-               <a href="/users">Users</a>
-            </div>
+            <a href="/users">
+
+               <div className={` ${location.pathname === '/users' ? 'sidebar__item active' : 'sidebar__item'}`}>
+                  <img src={usersIcon2} alt="user icon" className='sidebar__icon' />
+                  <a href="/users">Users</a>
+               </div>
+            </a>
             <div className="sidebar__item">
                <img src={usersIcon} alt="user icon" className='sidebar__icon' />
                Guarantors
@@ -127,12 +130,12 @@ const Sidebar = ({ isVisible }: { isVisible: boolean }) => {
          </div>
 
          <hr style={{ position: 'absolute', height: '1px', width: '100%', left: '0', opacity: '20%' }} />
-      
-         <div className="sidebar__section" style={{ marginTop: '2rem'}} onClick={handleLogout}>
+
+         <div className="sidebar__section" style={{ marginTop: '2rem' }} onClick={handleLogout}>
             <div className="sidebar__item">
                <img src={logoutIcon} alt="user icon" className='sidebar__icon' />
                Logout
-            </div>            
+            </div>
          </div>
       </aside>
    );

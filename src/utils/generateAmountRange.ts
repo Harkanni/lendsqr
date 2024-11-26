@@ -1,4 +1,4 @@
-function generateAmountRange(amountStr: any = '₦100000', subtractValue: number) {
+function generateAmountRange(amountStr: string = '₦100000', subtractValue: number) {
    // Step 1: Remove the currency symbol and commas
    let numericValue = parseFloat(amountStr.replace(/[₦,]/g, ''));
 

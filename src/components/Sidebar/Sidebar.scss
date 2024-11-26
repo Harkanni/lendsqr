@@ -66,6 +66,15 @@
   background-color: #e0f7fa;
 }
 
+.sidebar__item.dash {
+  padding: 0.2rem 0rem 0.2rem 0rem !important;
+  margin-bottom: 0 !important;
+  
+  &:hover {
+   border-left: none;
+  }
+}
+
 .icon-users::before {
   content: '👥'; /* Placeholder for user icon */
 }
